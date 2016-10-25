@@ -87,4 +87,8 @@ var PinchZoom = function ($mod) {
 
         }
     });
+
+    $mod.on('touchend,touchcancel', function (e) {
+        
+    });
 };
