@@ -18,17 +18,25 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            margin-left: -100px;
-            margin-top: -100px;
-            /*-webkit-transform: translate(-50%, -50%) translateZ(0);
-            transform: translate(-50%, -50%) translateZ(0);*/
+            /*margin-left: -100px;*/
+            /*margin-top: -100px;*/
+            -webkit-transform: translate(-50%, -50%) translateZ(0);
+            transform: translate(-50%, -50%) translateZ(0);
+
         }
     </style>
 </head>
 <body>
     <img src="./test.jpg" alt="">
-    <script src="./jquery.js"></script>
+    <script src="../lib/jquery.js"></script>
+    <script src="../lib/transit.js"></script>
     <script src="./pinch-zoom.js"></script>
+    <script>
+        $(window).on('touchstart', function (e) {
+            e.preventDefault();
+        });
+        PinchZoom($('img'));
+    </script>
     <script src="http://10.16.39.69:8001/target/target-script-min.js#anonymous"></script>
 </body>
 </html>
