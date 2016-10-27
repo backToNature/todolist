@@ -16,13 +16,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router history={hashHistory}>
-          <Route path="/" component={Nav}>
-          </Route>
-          <Route path="/ModuleA" component={ModuleA}/>
-          <Route path="/ModuleB" component={ModuleB}/>
-          <Route path="/ModuleC" component={ModuleC}/>
-        </Router>
+        <Nav />
       </div>
     );
   }

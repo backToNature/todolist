@@ -1,0 +1,11 @@
+
+node_modules
+
+coverage
+
+react/hello-world/build
+
+.DS_Store
+.env
+npm-debug.log
+*.swp

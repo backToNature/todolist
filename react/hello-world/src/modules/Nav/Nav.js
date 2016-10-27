@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router';
+import './Nav.css';
+// import {Link} from 'react-router';
 
 // import './App.css';
 
@@ -40,11 +41,11 @@ class Nav extends Component {
   render() {
     return (
         <div className="Nav">
-              <ul role="nav">
-                  <li><Link to="/moduleA">moduleA</Link></li>
-                  <li><Link to="/moduleB">moduleB</Link></li>
-                  <li><Link to="/moduleC">moduleC</Link></li>
-              </ul>
+            <ul className="flex">
+                <li className="cell active">tab1</li>
+                <li className="cell">tab2</li>
+                <li className="cell">tab3</li>
+            </ul>
         </div>
     );
   }

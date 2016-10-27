@@ -1,0 +1,14 @@
+.Nav {
+    text-align: center;
+}
+
+.Nav li {
+    height: 44px;
+    line-height: 44px;
+    background: #e43;
+    color: #fff;
+}
+
+.Nav li.active {
+    border-bottom: 2px solid #000;
+}
