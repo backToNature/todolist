@@ -54,11 +54,6 @@ var PinchZoom = function ($mod) {
             eventData.originB = [touches[1].pageX, touches[1].pageY];
             eventData.originDs = getDistance(eventData.originA[0], eventData.originA[1], eventData.originB[0], eventData.originB[1]);
             eventData.originScale = getScale($mod);
-            // if (!eventData.originPoint) {
-            //     eventData.originPoint = [touches[0].pageX, touches[0].pageY];
-            // }
-            // eventData.originPoint = [touches[0].pageX, touches[0].pageY];
-            // eventData.originTranslate = getTranslate($mod);
         } 
     });
 
@@ -88,7 +83,14 @@ var PinchZoom = function ($mod) {
         }
     });
 
-    $mod.on('touchend,touchcancel', function (e) {
-        
+    $mod.on('touchend', function (e) {
+        var event = e.originalEvent || e,
+            touches = event.touches;
+
+        if (touches.length == 1) {
+            eventData.originPoint = [touches[0].pageX, touches[0].pageY];
+            eventData.originTranslate = getTranslate($mod);
+        }
+        console.log(touches.length);
     });
 };
