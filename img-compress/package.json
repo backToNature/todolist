@@ -1,0 +1,18 @@
+{
+  "name": "img-compress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gh",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.1.1",
+    "imagemin": "^5.2.2",
+    "imagemin-pngquant": "^5.0.0",
+    "imagemin-mozjpeg": "^6.0.0"
+  }
+}
