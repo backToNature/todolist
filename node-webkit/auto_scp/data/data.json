@@ -1,0 +1,49 @@
+{
+   "data": [
+        {
+            "name": "双11活动项目",
+            "isWatching": false,
+            "host": "192.168.1.101:22",
+            "account": "work",
+            "pwd": "work1234",
+            "remoteDir": "/opt/data/",
+            "localDir": "D:\\a\\b"
+        },
+        {
+            "name": "双11活动项目",
+            "isWatching": false,
+            "host": "192.168.1.101:22",
+            "account": "work",
+            "pwd": "work1234",
+            "remoteDir": "/opt/data/",
+            "localDir": "D:\\a\\b"
+        },
+        {
+            "name": "双11活动项目",
+            "isWatching": false,
+            "host": "192.168.1.101:22",
+            "account": "work",
+            "pwd": "work1234",
+            "remoteDir": "/opt/data/",
+            "localDir": "D:\\a\\b"
+        },
+        {
+            "name": "双11活动项目",
+            "isWatching": false,
+            "host": "192.168.1.101:22",
+            "account": "work",
+            "pwd": "work1234",
+            "remoteDir": "/opt/data/",
+            "localDir": "D:\\a\\b"
+        },
+        {
+            "name": "双11活动项目",
+            "isWatching": false,
+            "host": "192.168.1.101:22",
+            "account": "work",
+            "pwd": "work1234",
+            "remoteDir": "/opt/data/",
+            "localDir": "D:\\a\\b"
+        }
+   ]
+}
