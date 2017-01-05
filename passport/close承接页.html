@@ -1,0 +1,29 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" > 
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  
+  <title></title>
+</head>
+<body>
+<script type='text/javascript'>
+//手机端android上的uc和qq,所有机型微信,以及app中内嵌wap畅言时，浏览器不支持window.open只能在当前页进行跳转
+
+window.onload = winClose;
+
+
+function winClose() {
+    try {
+        window.close();
+    } catch (e) {
+        window.opener = null;
+        window.open('','_self');
+        window.close();
+    }
+}
+</script>
+</body>
+</html>
