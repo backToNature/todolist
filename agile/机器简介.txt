@@ -1,0 +1,22 @@
+mysql通过yum安装
+yum install mysql-server
+
+
+mysql启动和关闭
+/etc/init.d/mysqld start
+/etc/init.d/mysqld stop
+
+（2）开机启动
+        /sbin/chkconfig - - list 
+        /sbin/chkconfig add mysqld
+        /sbin/chkconfig mysqld on
+
+机器登录mysql
+
+mysql -uroot
+ 
+数据库用户名，密码, 端口
+guohao
+zaq1230.
+3306
+

@@ -1,0 +1,12 @@
+{
+  "name": "agileUI系统api",
+  "version": "0.3.0",
+  "description": "全面介绍了agileUI系统api文档，并提供测试方案",
+  "title": "agile UI api doc",
+  "url" : "http://10.0.69.182",
+  "sampleUrl": "http://10.16.39.69:3000",
+  "template": {
+    "withCompare": true,
+    "withGenerator": true
+  }
+}
