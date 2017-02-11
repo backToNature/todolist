@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <h1 class="header">啦啦啦</h1>
+        <div class="bg"></div>
     </div>
 </template>
 <script>
@@ -17,6 +18,11 @@ module.export = {
 };
 </script>
 <style>
+    .bg {
+        width: 400px;
+        height: 300px;
+        background: url('../static/image/test.jpg');
+    }
     #app {
       font-family: 'Avenir', Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
