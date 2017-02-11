@@ -6,3 +6,4 @@ react/hello-world/build
 npm-debug.log
 *.swp
 api123/doc
+dist
