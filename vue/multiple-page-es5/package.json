@@ -1,0 +1,23 @@
+{
+  "name": "multiple-page",
+  "version": "1.0.0",
+  "description": "vue simple multiple-page frame",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gh",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.1.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.25.0",
+    "file-loader": "^0.10.0",
+    "vue-loader": "^10.3.0",
+    "vue-template-compiler": "^2.1.10",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  }
+}
