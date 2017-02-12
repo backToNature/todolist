@@ -2,11 +2,14 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/index-entry.js',
+  entry: {
+    index: './src/index-entry.js',
+    user: './src/user-entry.js'
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'index.js'
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -16,7 +19,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader ',
+        loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]'
         }
