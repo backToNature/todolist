@@ -1,11 +1,11 @@
 <template>
     <div id="app">
-        <h1 class="header">啦啦啦</h1>
+        <h1 class="header">啦啦啦{{msg}}</h1>
         <div class="bg"></div>
     </div>
 </template>
 <script>
-module.export = {
+module.exports = {
     name: 'app',
     data: function () {
         return {
@@ -13,11 +13,11 @@ module.export = {
         }
     },
     beforeMount: function () {
-
+      alert(134124325464576);
     }
 };
 </script>
-<style>
+<style scoped>
     .bg {
         width: 400px;
         height: 300px;

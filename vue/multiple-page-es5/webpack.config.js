@@ -1,5 +1,7 @@
-var path = require('path')
-var webpack = require('webpack')
+var path = require('path');
+var webpack = require('webpack');
+// var fs = require('fs');
+
 
 module.exports = {
   entry: {
@@ -40,6 +42,23 @@ module.exports = {
   },
   devtool: '#eval-source-map'
 }
+
+// var srcPath = path.join(__dirname, 'src');
+// var distPath = path.join(__dirname, 'dist');
+
+// if (!fs.existsSync(distPath)) {
+//   fs.mkdirSync(distPath);
+// }
+
+
+// fs.readdirSync(srcPath).forEach(function (item) {
+//   if (path.extname(item) === '.html') {
+//     fs.writeFileSync(path.join(distPath, item), fs.readFileSync(path.join(srcPath, item)));
+//   }
+// });
+
+
+
 
 // if (process.env.NODE_ENV === 'production') {
 //   module.exports.devtool = '#source-map'
