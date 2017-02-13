@@ -1,6 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
-// var fs = require('fs');
+var fs = require('fs');
 
 
 module.exports = {
@@ -43,40 +43,40 @@ module.exports = {
   devtool: '#eval-source-map'
 }
 
-// var srcPath = path.join(__dirname, 'src');
-// var distPath = path.join(__dirname, 'dist');
+var srcPath = path.join(__dirname, 'src');
+var distPath = path.join(__dirname, 'dist');
 
-// if (!fs.existsSync(distPath)) {
-//   fs.mkdirSync(distPath);
-// }
-
-
-// fs.readdirSync(srcPath).forEach(function (item) {
-//   if (path.extname(item) === '.html') {
-//     fs.writeFileSync(path.join(distPath, item), fs.readFileSync(path.join(srcPath, item)));
-//   }
-// });
+if (!fs.existsSync(distPath)) {
+  fs.mkdirSync(distPath);
+}
 
 
+fs.readdirSync(srcPath).forEach(function (item) {
+  if (path.extname(item) === '.html') {
+    fs.writeFileSync(path.join(distPath, item), fs.readFileSync(path.join(srcPath, item)));
+  }
+});
 
 
-// if (process.env.NODE_ENV === 'production') {
-//   module.exports.devtool = '#source-map'
-//   // http://vue-loader.vuejs.org/en/workflow/production.html
-//   module.exports.plugins = (module.exports.plugins || []).concat([
-//     new webpack.DefinePlugin({
-//       'process.env': {
-//         NODE_ENV: '"production"'
-//       }
-//     }),
-//     new webpack.optimize.UglifyJsPlugin({
-//       sourceMap: true,
-//       compress: {
-//         warnings: false
-//       }
-//     }),
-//     new webpack.LoaderOptionsPlugin({
-//       minimize: true
-//     })
-//   ])
-// }
+
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports.devtool = '#source-map'
+  // http://vue-loader.vuejs.org/en/workflow/production.html
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      compress: {
+        warnings: false
+      }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    })
+  ])
+}
