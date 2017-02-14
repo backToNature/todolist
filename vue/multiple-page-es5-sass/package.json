@@ -1,0 +1,25 @@
+{
+  "name": "multiple-page-es5-sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot"
+  },
+  "author": "guohao",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.1.0"
+  },
+  "devDependencies": {
+    "cross-env": "^3.0.0",
+    "css-loader": "^0.25.0",
+    "file-loader": "^0.10.0",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.0",
+    "vue-loader": "^10.3.0",
+    "vue-template-compiler": "^2.1.10",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  }
+}
