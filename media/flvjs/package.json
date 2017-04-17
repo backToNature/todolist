@@ -1,0 +1,17 @@
+{
+  "name": "flvjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "flv.js": "^1.2.0"
+  },
+  "devDependencies": {
+    "nodejs-server": "^0.0.12"
+  }
+}
