@@ -1,0 +1,44 @@
+<script>
+function getSelectPosition(oTxt){
+			var nullvalue = -1;
+            var selectStart ;//选中开始位置
+			var selectEnd ;//选中结束位置
+			var position;//焦点位置
+			var selectText;//选中内容
+            if(oTxt.setSelectionRange){//非IE浏览器
+                selectStart= oTxt.selectionStart;
+				selectEnd = oTxt.selectionEnd;
+				if(selectStart == selectEnd){
+					position = oTxt.selectionStart;
+					selectStart = nullvalue;
+					selectEnd = nullvalue;
+				}else{
+					position = 	nullvalue;
+				}
+				selectText = oTxt.value.substring(selectStart,selectEnd);
+            }else{//IE
+                var range = document.selection.createRange();
+				selectText=range.text;
+                range.moveStart("character",-oTxt.value.length);
+				position = range.text.length;
+				selectStart = position - (selectText.length);
+				selectEnd = selectStart + (selectText.length);
+				if(selectStart != selectEnd){
+					position = nullvalue;
+				}else{
+					selectStart = nullvalue;
+					selectEnd = nullvalue;
+				}
+            }
+			document.getElementById("txt1").value=position;
+			document.getElementById("txt2").value=selectStart;
+			document.getElementById("txt3").value=selectEnd;
+			document.getElementById("txt4").value=selectText;
+        }
+		
+</script>
+<input type="text" id="txt" value="abcdefghijklmn" onclick="getSelectPosition(this);">点击文本框内容触发事件<br/>
+焦点位置：<input type="text" id="txt1" value=""><br/>
+选中起始位置：<input type="text" id="txt2" value="">
+选中结束位置<input type="text" id="txt3" value=""><br/>
+选中内容: <input type="text" id="txt4" value="">
