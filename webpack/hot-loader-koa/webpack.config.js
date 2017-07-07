@@ -10,17 +10,13 @@ module.exports = {
     },
     output: {
         filename: 'dist.js',
-        path: path.join(__dirname, './entry.js')
-    },
-    performance: {
-        hints: false
+        path: __dirname
     },
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
-    ],
-    devtool: '#eval-source-map'
+    ]
 };
 
 // if (process.env.NODE_ENV === 'production') {

@@ -40,9 +40,9 @@ app.use(devMiddleware(compile, {
     }
 }));
 app.use(hotMiddleware(compile, {
-  log: console.log,
-  path: '/__webpack_hmr',
-  heartbeat: 10 * 1000
+  // log: console.log,
+  // path: '/__webpack_hmr',
+  // heartbeat: 10 * 1000
 }));
 
 app.use(async function (ctx, next) {
@@ -50,6 +50,7 @@ app.use(async function (ctx, next) {
         await send(ctx, './index.html');
     }
 });
+
 
 app.listen(1616, () => {
     console.log('listen ------')
