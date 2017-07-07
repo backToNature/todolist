@@ -1,0 +1,17 @@
+{
+  "name": "hot-loader-koa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "author": "",
+  "dependencies": {
+    "koa": "^2.0.0-alpha.8",
+    "koa-send": "^4.1.0",
+    "regenerator-runtime": "^0.10.5"
+  },
+  "devDependencies": {
+    "eventsource-polyfill": "^0.9.6",
+    "koa-webpack-middleware": "^1.0.5",
+    "webpack": "^3.1.0"
+  }
+}
