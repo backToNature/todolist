@@ -1,0 +1,22 @@
+.SkinList {
+    .title {
+        font-size: 16px;
+        margin: 40px 0 15px;
+    }
+    .group-list {
+        min-height: 1105px;
+        li {
+            &:nth-child(odd) {
+                margin-right: 20px;
+            }
+            position: relative;
+            width: -webkit-calc(~"(100% - 20px)/2");
+            float: left;
+            cursor: pointer;
+            margin-bottom: 20px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
