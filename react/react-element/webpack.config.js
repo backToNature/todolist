@@ -16,7 +16,13 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+      {   test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+          query: {
+              presets: ['es2015', 'react'] // es2015 处理 ES6 语法，react 处理 jsx 语法
+          }
+      },
       {
           test: /\.(png|jpg|gif|svg)$/,
           loader: 'file-loader',
