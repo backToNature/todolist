@@ -5,7 +5,7 @@ import '../common/layout.less'
 
 import Header from './Header/Header.js'
 import SkinList from './SkinList/SkinList.js'
-import Slider from './Slider/Slider.js'
+import Slider from './Slider/Slider.jsx'
 
 const Root = () => (
     <div className="layout-doc">

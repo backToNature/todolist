@@ -1,6 +1,7 @@
 import React from 'react'
 import {Carousel} from 'element-react'
 import './Slider.less'
+import {Button, Tag, Icon} from '@tencent/comby-lib-mobile'
 
 
 class Slider extends React.Component {
@@ -18,6 +19,9 @@ class Slider extends React.Component {
     render() {
         return (
             <div className="Slider">
+                <Button>fsdfsdff</Button>
+                <Tag>fsdfsdff</Tag>
+                <Icon>fsdfsdff</Icon>
                 <div className="title" onClick={this.doClick.bind(this)}>精选</div>
                 <div className="title">{this.state.value}</div>
                 <Carousel trigger="click" height="210px" autoplay={false}>
