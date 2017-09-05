@@ -61,8 +61,7 @@
     //     _recursive(wrapper);
     //     return _result;
     // };
-
-
+console.log(window.getContent(document.body));
     
 }());
 
