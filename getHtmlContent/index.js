@@ -61,7 +61,8 @@
     //     _recursive(wrapper);
     //     return _result;
     // };
-console.log(window.getContent(document.body));
+
+    console.log(window.getContent($('#Cnt-Main-Article-QQ')[0]));
     
 }());
 

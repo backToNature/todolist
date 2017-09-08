@@ -1,14 +1,17 @@
 const gulp = require('gulp');
+const cleanCSS = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminPngquant = require('imagemin-pngquant');
+const imageminGifsicle = require('imagemin-gifsicle');
+const imageminSvgo = require('imagemin-svgo');
 const gulpif = require('gulp-if');
-
-const uglify = require('gulp-uglify');
+const uglify = require('uglify-es');
+const composer = require('gulp-uglify/composer');
 const pump = require('pump');
-
-const cleanCSS = require('gulp-clean-css');
 const path = require('path');
+const minify = composer(uglify, console);
+
 
 var condition1 = function (file) {
     var fileExt = ['.jpg', '.png', '.gif', '.ico'];
@@ -34,8 +37,8 @@ var condition3 = function (file) {
 
 gulp.task('default', () =>
     gulp.src('src/**/*')
-        .pipe(gulpif(condition1, imagemin([imagemin.gifsicle(), imageminMozjpeg(), imageminPngquant(), imagemin.svgo()])))
-        .pipe(gulpif(condition2, uglify()))
+        .pipe(gulpif(condition1, imagemin([imageminGifsicle(), imageminMozjpeg(), imageminPngquant(), imageminSvgo()])))
+        .pipe(gulpif(condition2, minify({})))
         .pipe(gulpif(condition3, cleanCSS({compatibility: 'ie8'})))
-        .pipe(gulp.dest('gulp'))
+        .pipe(gulp.dest('dist'))
 );
