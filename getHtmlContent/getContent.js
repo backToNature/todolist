@@ -30,18 +30,7 @@
 
         // 获取所有的容器元素
         $('body,article,section,div,td,li,dd,dt').each(function () {
-            var $this = $(this);
-            if ($this.width() > 0 && $this.height() > 0 && $this.css('display') !== 'none') {
-                $.each($this[0].childNodes, function () {
-                    var _node = this;
-                    var tagName = (_node.nodeType === 3 ? '#text' : ((_node.nodeType === 1 && _node.tagName && _node.tagName > '') ? _node.tagName.toLowerCase() : '#invalid'));
-                    
-                    // if ()
-                    
-
-
-                });
-            }
+            
 
         });
 
