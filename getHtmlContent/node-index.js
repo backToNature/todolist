@@ -5,14 +5,15 @@ let content = fs.readFileSync(path.join(__dirname, './test/qq.html'), 'utf8');
 
 let $ = cheerio.load(content,{decodeEntities: false});
 
-
 // console.log($.html());
-let $body = $('');
+$('script').remove();
 
-console.log($('body'));
+$('link').remove();
+
+html = $('body').html();
 
 
 
-fs.writeFileSync(path.join(__dirname, './test/qq-dest.html'),$.html() , 'utf8');
+fs.writeFileSync(path.join(__dirname, './test/qq-dest.html'),html , 'utf8');
 console.log('success');
 
