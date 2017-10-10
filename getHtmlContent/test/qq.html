@@ -347,85 +347,10 @@
 </div>
 
 
-<script src="//statics.itc.cn/web/static/js/lib-111eab4f1d.js"></script>
-<!--<script src="//statics.itc.cn/web/static/js/ie8hack-07e05e83f1.js"></script>-->
-<script src="//txt.go.sohu.com/ip/soip"></script>
-<script src="//statics.itc.cn/web/static/js/main-56878efe72.js"></script>
-<script src="//js.sohu.com/pv.js"></script>
+<script src="../lib/jquery-1.9.1.min.js"></script>
+<script src="../lib/down-container.js"></script>
 <script>
-    try{console.log("执行成功")
-        window.sohu_mp.article({
-            channel_id: "8",
-            news_id: "193987500",
-            cms_id: "513821725",
-            media_id: "115479",
-            passport: "1887344341@sina.sohu.com",
-            weboUrl: "http://mp.sohu.com/profile?xpt=MTg4NzM0NDM0MUBzaW5hLnNvaHUuY29t",
-            title: "这位驻香港正部级官员 离任感言提了王菲的歌",
-            channel_url:"//news.sohu.com",
-            categoryId:"0",
-            mpNewsExt:{
-                "modelId":""
-            }});
-
-    }
-    catch(e){
-        var html = '<div class="err-js">' +
-            '<span><em class="icon err-js-icon"></em>JS加载错误，请重新加载。</span>' +
-            '<a href="javascript:window.location.reload()" target="_blank" class="cached-btn"' +
-            '><em class="icon-cached"></em>刷新</a></div>';
-        $(document.body).prepend(html);
-        // Raven.captureException(e);
-        console.error("发生错误",e);
-    }
+    console.log($D.getContent__findInPage(window));
 </script>
-<!--[if lt IE 8]>
-<script type="text/javascript">
-    (function(){
-        var ua = navigator.userAgent;
-        var version;
-        var html = '<div class="area clear">' +
-                '<div class="ie-low">' +
-                '<p>您的浏览器版本过低<br>为了更好的体验，请升级你的浏览器。</p>' +
-                '<h5><a href="https://ie.sogou.com" target="_blank" class="upgrade-btn">马上升级</a></h5>' +
-                '</div></div>';
-        if (/MSIE ([^;]+)/.test(ua)) {
-            version = parseInt(RegExp["$1"]);
-            if (version<8) {
-                document.body.innerHTML=html;
-                var reg = new RegExp("(^| )SUV=([^;]*)(;|$)");
-                var suvs = unescape(document.cookie.match(reg)[2]);
-                var spv_server_src = "http://pv.sohu.com/action.gif?actionId=10078&SUV="+suvs;
-                var scripts = document.createElement('script');
-                scripts.src = spv_server_src;
-                document.body.appendChild(scripts);
-                Raven.captureException(new Error('ie'+version));
-            }
-        }
-    })()
-</script>
-<![endif]-->
-<script src="//images.sohu.com/bill/default/sohu-require.js"></script>
-<script type="text/javascript"> require(["sjs/matrix/ad/passion"]);</script>
-<script type="text/javascript" src="//www.sohu.com/sohuflash_1.js"></script>
-<script type="text/javascript" src="//images.sohu.com/bill/s2015/jscript/lib/sjs/matrix/ad/form/delivery.js"></script>
-
-<script type="text/javascript" src="//images.sohu.com/bill/s2015/jscript/lib/sjs/matrix/pv/pagePVmonitor.js"></script>
-
-<script>
-    (function(){
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        }
-        else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
-
 </body>
 </html>

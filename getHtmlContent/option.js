@@ -23,4 +23,5 @@ let _option = {
     }
 };
 
-console.log(_option);
+module.exports = _option;
+
