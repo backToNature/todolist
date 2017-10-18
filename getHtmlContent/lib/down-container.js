@@ -635,7 +635,6 @@ $D.getContent__processCandidates__first = function (_candidatesToProcess)
 
         for (var k=i, _k=_candidates.length; k<_k; k++)
         {
-            debugger;
             if (_candidates[k]._count__candidates > 0) { continue; }
             if (_candidates[i].__node.contains(_candidates[k].__node)) {
             } else { continue; }
