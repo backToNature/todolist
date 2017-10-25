@@ -22,6 +22,72 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1" />
+    <link rel="icon" href="//statics.itc.cn/web/static/images/pic/sohu-logo/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="//statics.itc.cn/web/static/images/pic/sohu-logo/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="//statics.itc.cn/web/static/images/pic/sohu-logo/logo-57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="//statics.itc.cn/web/static/images/pic/sohu-logo/logo-72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="//statics.itc.cn/web/static/images/pic/sohu-logo/logo-114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="//statics.itc.cn/web/static/images/pic/sohu-logo/logo-144.png" />
+    <link href="//statics.itc.cn/web/static/css/main-8444a11c0e.css" rel="stylesheet"/>
+    <script>
+        //  加载监控代码
+    </script>
+    <!--[if lt IE 9]>
+    <script src="//statics.itc.cn/web/static/js/es5-shim-08e41cfc3e.min.js"></script>
+    <script src="//statics.itc.cn/web/static/js/es5-sham-1d5fa1124b.min.js"></script>
+    <script src="//statics.itc.cn/web/static/js/html5shiv-21fc8c2ba6.js"></script>
+    <link href="//statics.itc.cn/web/static/css/ie8hack-9dce3c3b96.css" rel="stylesheet" />
+    <![endif]-->
+    <script type="text/javascript">
+        //解決IE8,IE9不支持console的问题
+        (function() {
+            var method;
+            var noop = function() {};
+            var methods = [
+                'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+                'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+                'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+                'timeStamp', 'trace', 'warn'
+            ];
+            var length = methods.length;
+            var console = (window.console = window.console || {});
+
+            while (length--) {
+                method = methods[length];
+
+                // Only stub undefined methods.
+                if (!console[method]) {
+                    console[method] = noop;
+                }
+            }
+        }());
+    </script>
+    <script type="text/javascript">
+        (function () {
+            var html = document.getElementsByTagName("html")[0];
+            var width = Math.min(document.documentElement.clientWidth, 790);
+            width = width < 320 ? 320 : width;
+            if (document.documentElement.clientWidth <= 1024) {
+                html.style.fontSize = width / 790 * 79 + 'px';
+            }
+            if (window.addEventListener) {
+                window.addEventListener('resize', resizeHandler);
+            }
+            else if (window.attachEvent) {
+                window.attachEvent('onresize', resizeHandler);
+            }
+            function resizeHandler() {
+                if (document.documentElement.clientWidth <= 1024) {
+                    var width = Math.min(document.documentElement.clientWidth, 790);
+                    width = width < 320 ? 320 : width;
+                    html.style.fontSize = width / 790 * 79 + 'px';
+                } else {
+                    html.style.fontSize = "16px";
+                }
+            };
+        })();
+    </script>
+
 
 </head>
 <body class="article-page">
@@ -67,7 +133,7 @@
 
     </header>
     <div class="location area">
-        <span class="sohu-logo"><a href="/">搜狐</a></span>&gt;<a href="http://news.sohu.com" data-role="channelLink" target="_blank">新闻</a>&gt;<span data-role="category-name" style="display:none"><em style="margin:0 8px;"></em>&gt;</span><span class="dir-end">正文</span>
+        <span class="sohu-logo"><a href="/">搜狐</a></span>&gt;<a href="//news.sohu.com" data-role="channelLink" target="_blank">新闻</a>&gt;<span data-role="category-name" style="display:none"><em style="margin:0 8px;"></em>&gt;</span><span class="dir-end">正文</span>
     </div>             <div class="area clearfix" id="article-container">
     <div class="column left">
         <div class="user-info" id="user-info">
@@ -80,7 +146,7 @@
                 <dd><span class="value" data-value="" data-role="info-read-num"><em class="num"></em></span>总阅读</dd>
             </dl>
             <div class="user-more"><a href="http://mp.sohu.com/profile?xpt=MTg4NzM0NDM0MUBzaW5hLnNvaHUuY29t&_f=index_pagemp_2" target="_blank">查看TA的文章&gt;</a></div>
-        </div>  <div class="article-do" id="article-do">
+        </div>	<div class="article-do" id="article-do">
         <div class="article-done">
             <dl>
 
@@ -117,7 +183,7 @@
             <table>
                 <tbody>
                 <tr>
-                    <td><p align="center"><img src="http://5b0988e595225.cdn.sohucs.com/images/20170923/0c48c59ffc3c44a992adc7365fd02301.jpeg" width="500" height="320" /></p></td>
+                    <td><p align="center"><img src="//5b0988e595225.cdn.sohucs.com/images/20170923/0c48c59ffc3c44a992adc7365fd02301.jpeg" width="500" height="320" /></p></td>
                 </tr>
                 </tbody>
             </table>
@@ -146,7 +212,7 @@
             <table>
                 <tbody>
                 <tr>
-                    <td><p align="center"><img src="http://5b0988e595225.cdn.sohucs.com/images/20170923/66f44a43aed04ae38e4e7989d83ccd07.jpeg" width="500" height="353" /></p></td>
+                    <td><p align="center"><img src="//5b0988e595225.cdn.sohucs.com/images/20170923/66f44a43aed04ae38e4e7989d83ccd07.jpeg" width="500" height="353" /></p></td>
                 </tr>
                 </tbody>
             </table>
@@ -160,14 +226,14 @@
             <table>
                 <tbody>
                 <tr>
-                    <td><p align="center"><img src="http://5b0988e595225.cdn.sohucs.com/images/20170923/838b416d4e154114888d2ce6c1c3b705.jpeg" width="500" height="333" /></p></td>
+                    <td><p align="center"><img src="//5b0988e595225.cdn.sohucs.com/images/20170923/838b416d4e154114888d2ce6c1c3b705.jpeg" width="500" height="333" /></p></td>
                 </tr>
                 </tbody>
             </table>
             <p align="center">图中央举酒杯者为王志民（图：东方IC） </p>
             <p>王志民2006年开始任香港中联办副秘书长，2009年升任副主任，2015年调任澳门中联办副主任，去年扶正。而此番调回香港任正职，和张晓明一样，属于回到“老地方”。 </p>
             <p>接任王志民的郑晓松，曾在福建工作。他2013年从财政部“空降”福建，先后任副省长，省委常委、省委秘书长，2016年6月进入中联部任职，如今刚过一年，即迎来新任命。 </p>
-            <p>（撰文 李岩 编辑 邹春霞 ）<a href="http://www.sohu.com/?strategyid=00001 " target="_blank" title="点击进入搜狐首页" id="backsohucom" style="white-space: nowrap;"><span class="backword"><i class="backsohu"></i>返回搜狐，查看更多</span></a></p>      <p data-role="editor-name">责任编辑：<span></span></p>
+            <p>（撰文 李岩 编辑 邹春霞 ）<a href="//www.sohu.com/?strategyid=00001 " target="_blank" title="点击进入搜狐首页" id="backsohucom" style="white-space: nowrap;"><span class="backword"><i class="backsohu"></i>返回搜狐，查看更多</span></a></p>      <p data-role="editor-name">责任编辑：<span></span></p>
         </article>
         <div class="statement">声明：本文由入驻搜狐号的作者撰写，除搜狐官方账号外，观点仅代表作者本人，不代表搜狐立场。</div>  <div class="article-oper">
         <div class="article-oper-1 left">

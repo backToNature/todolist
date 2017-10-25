@@ -1,5 +1,5 @@
 let _option = {
-    'remove_elements': ['button', 'input', 'select', 'textarea', 'optgroup', 'command', 'datalist', 'frame', 'frameset', 'noframes', 'style', 'link', 'script', 'noscript', 'canvas', 'applet', 'map', 'marquee', 'area', 'base', 'base'],
+    'remove_elements': ['button', 'input', 'select', 'textarea', 'optgroup', 'command', 'datalist', 'frame', 'frameset', 'noframes', 'style', 'link', 'script', 'noscript', 'canvas', 'applet', 'map', 'marquee', 'area', 'base', 'base', '#invalid'],
     'wash_elements': ['a', 'b', 'i', 'em', 'strong'],
     'container': ['body', 'article', 'section', 'div', 'td', 'li', 'dd', 'dt'],
     'self_colose': ['br', 'hr', 'img', 'col', 'source', 'embed', 'param'],

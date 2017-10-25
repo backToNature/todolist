@@ -5,4 +5,4 @@ let body = window.document.body;
 
 let containers = $$getContainer(body);
 
-console.log($$getGoodContainer(containers)[0]);
+console.log($$getGoodContainer(containers));
