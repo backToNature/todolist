@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp"
   },
   "author": "gh",
   "license": "MIT",
@@ -13,10 +14,10 @@
     "gulp-clean-css": "^2.0.13",
     "gulp-if": "^2.0.1",
     "gulp-imagemin": "^3.1.1",
-    "gulp-uglify": "^2.0.0",
     "imagemin": "^5.2.2",
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-pngquant": "^5.0.0",
-    "pump": "^1.0.1"
+    "imagemin-gifsicle": "^5.0.0",
+    "imagemin-svgo": "^5.0.0"
   }
 }
