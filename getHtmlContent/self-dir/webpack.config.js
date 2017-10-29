@@ -29,11 +29,6 @@ module.exports = {
       exclude: ['public/lib']
     })
   ],
-  resolve: {
-      alias: {
-          'vue$': 'vue/dist/vue.common.js'
-      }
-  },
   performance: {
       hints: false
   },

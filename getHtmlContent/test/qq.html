@@ -350,7 +350,9 @@
 <script src="../lib/jquery-1.9.1.min.js"></script>
 <script src="../lib/down-container.js"></script>
 <script>
-    console.log($D.getContent__findInPage(window));
+    var now = new Date();
+    console.log($D.getContent__findInPage(window)._targetCandidate.__node);
+    console.log(`time:${new Date() - now}`);
 </script>
 </body>
 </html>

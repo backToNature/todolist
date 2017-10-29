@@ -677,7 +677,6 @@ $D.getContent__processCandidates__first = function (_candidatesToProcess)
 
     //  return
     //  ======
-    console.log(_candidates.length);
     return _candidates;
 
 };
@@ -2176,7 +2175,6 @@ $D.getContent__findInPage = function (_pageWindow)
     var _processedCandidates = $D.getContent__processCandidates__first(_stuff._candidates);
     _firstCandidate = _processedCandidates[0];
     _targetCandidate = _firstCandidate;
-    console.log(_targetCandidate.__node.outerHTML);
     $D.debugRemember('ProcessFirst', $D.debugTimerEnd()+'ms');
 
     //  debug

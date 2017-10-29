@@ -21,7 +21,7 @@ let getTagsNum = (root) => {
     return tagsNum;
 };
 
-let global_sentences = 0;
+let global_sentences = 0, global_img_num = 0;
 
 let getGoodContainer = (containers) => {
     let containers_details = [];
@@ -32,11 +32,13 @@ let getGoodContainer = (containers) => {
 
         obj.img_num = _node.querySelectorAll('img').length || 0; // 记录图片数量
 
+        global_img_num += obj.img_num;
+
         obj.text_length = _node.innerText.length || 0; // 记录文本长度
 
         obj.sentences = $$getSentenceNum(_node.innerText);
 
-        global_sentences+= obj.sentences;
+        global_sentences += obj.sentences;
 
         obj.link_text_length = 0;
 
@@ -57,7 +59,7 @@ let getGoodContainer = (containers) => {
     });
 
     containers_details.forEach(item => {
-        $$compute(item, global_sentences);
+        $$compute(item, global_sentences, global_img_num);
     });
 
     containers_details.sort(function (a, b)
@@ -70,7 +72,6 @@ let getGoodContainer = (containers) => {
         }
     });
 
-    console.log(containers_details);
 
     return containers_details;
 };
