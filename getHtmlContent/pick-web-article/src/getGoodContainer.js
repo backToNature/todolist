@@ -1,3 +1,7 @@
+/**
+ * Created by daringuo on 2017/10/25.
+ */
+
 import $$getSentenceNum from './getSentenceNum.js';
 import $$compute from './compute.js';
 import $$option from './option.js';
@@ -21,7 +25,8 @@ let getTagsNum = (root) => {
     return tagsNum;
 };
 
-let global_sentences = 0;
+let global_sentences = 0, // 总句数
+    global_img_num = 0; // 总图数
 
 let getGoodContainer = (containers) => {
     let containers_details = [];
@@ -32,11 +37,13 @@ let getGoodContainer = (containers) => {
 
         obj.img_num = _node.querySelectorAll('img').length || 0; // 记录图片数量
 
+        global_img_num += obj.img_num;
+
         obj.text_length = _node.innerText.length || 0; // 记录文本长度
 
-        obj.sentences = $$getSentenceNum(_node.innerText);
+        obj.sentences = $$getSentenceNum(_node.innerText); // 记录文本句数
 
-        global_sentences+= obj.sentences;
+        global_sentences += obj.sentences;
 
         obj.link_text_length = 0;
 
@@ -57,19 +64,17 @@ let getGoodContainer = (containers) => {
     });
 
     containers_details.forEach(item => {
-        $$compute(item, global_sentences);
+        $$compute(item, global_sentences, global_img_num);
     });
 
-    containers_details.sort(function (a, b)
-    {
-        switch (true)
-        {
+    // 按文本密度升序排列
+    containers_details.sort(function (a, b) {
+        switch (true) {
             case (a.point < b.point): return -1;
             case (a.point > b.point): return 1;
             default: return 0;
         }
     });
-
 
     return containers_details;
 };

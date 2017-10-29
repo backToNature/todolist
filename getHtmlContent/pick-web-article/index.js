@@ -1,15 +1,12 @@
+/**
+ * Created by daringuo on 2017/10/16.
+ */
 
-import $$getContainer from './src/getContainer.js';
-import $$getGoodContainer from './src/getGoodContainer.js';
+const {JSDOM} = require('jsdom');
+const pickWA = require('./dist/pick-web-article.js');
 
-let pickWA = (root) => {
-    let containers = $$getContainer(root);
-    let goodContainers = $$getGoodContainer(containers);
-    if (goodContainers.length) {
-        return goodContainers[goodContainers.length - 1];
-    } else {
-        return null;
-    }
+module.exports = (htmlStr) => {
+    const { document } = (new JSDOM(htmlStr)).window;
+    let body = document.body;
+    return pickWA(body);
 };
-
-export default pickWA;

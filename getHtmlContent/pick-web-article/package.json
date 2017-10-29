@@ -2,9 +2,10 @@
   "name": "pick-web-article",
   "version": "1.0.0",
   "description": "从web中提取正文，比印象笔记快一倍",
-  "main": "index.js",
+  "main": "dist/pick-web-article-node.js",
   "scripts": {
-    "build": "rollup index.js --watch --output.format umd --name \"pickWA\" --output.file dist/pick-web-article.js"
+    "dev": "rollup index-browser.js --watch --output.format umd --name \"pickWA\" --output.file dist/pick-web-article.js",
+    "build": "rollup index-browser.js --output.format umd --name \"pickWA\" --output.file dist/pick-web-article.js"
   },
   "repository": {
     "type": "git",
@@ -12,7 +13,16 @@
   },
   "author": "'daringuo' <'daringuo@tencent.com'>",
   "license": "MIT",
+  "dependencies": {
+    "jsdom": "^11.2.0"
+  },
   "devDependencies": {
+    "http-proxy": "*",
+    "request-promise-native": "*",
+    "request": "*",
+    "koa-router": "*",
+    "koa-static": "*",
+    "koa": "*",
     "rollup": "^0.50.0"
   }
 }

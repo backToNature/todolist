@@ -1,15 +1,20 @@
+/**
+ * Created by daringuo on 2017/10/28.
+ */
+
 import $$option from './option.js';
 
 let getContainer = (root) => {
     let containers = root.querySelectorAll($$option.container.join(','));
     let _containers = [];
-    // 过滤一些比较离谱的容器
+    // 容器过滤机制
+
     containers.forEach(item => {
-        if (item.innerText.length < 10) {
-            // 过滤掉文本小于10的容器
-        } else {
-            _containers.push(item);
-        }
+        /**
+         * @todo
+         * 基于视觉制定一些过滤规则
+         */
+        _containers.push(item);
     });
     return _containers;
 };
