@@ -43,10 +43,10 @@ router.get('/qb_pick_test/web', async (ctx, next) => {
         if (type.toUpperCase().indexOf('GB2312') >= 0) {
             // console.log('啊啊', iconv.decode('啊啊', 'gb2312'));
             // console.log(iconv.decode(obj.content, 'gb2312').toString());
-            obj.content = iconv.decode(obj.content, 'gb2312').toString();
-            console.log(obj.content);
+            // obj.content = iconv.decode(obj.content, 'gb2312').toString();
+            // console.log(obj.content);
         } else if (type.toUpperCase().indexOf('GBK') >= 0) {
-            obj.content = iconv.decode(obj.content, 'gbk');
+            // obj.content = iconv.decode(obj.content, 'gbk');
         }
     }
     ctx.set(obj.headers);
