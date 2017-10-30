@@ -15,7 +15,7 @@ let domain;
 
 let _doRequest = (url) => {
     return new Promise((resolve, reject) => {
-        request(url, (err, res, body) => {
+        request({encoding: null, url: url}, (err, res, body) => {
             if (err) {
                 reject(err);
             } else {
@@ -44,6 +44,7 @@ router.get('/qb_pick_test/web', async (ctx, next) => {
             // console.log('啊啊', iconv.decode('啊啊', 'gb2312'));
             // console.log(iconv.decode(obj.content, 'gb2312').toString());
             obj.content = iconv.decode(obj.content, 'gb2312').toString();
+            console.log(obj.content);
         } else if (type.toUpperCase().indexOf('GBK') >= 0) {
             obj.content = iconv.decode(obj.content, 'gbk');
         }
