@@ -1,22 +1,14 @@
 var path = require('path');
 var webpack = require('webpack');
-var fs = require('fs');
 var cleanWebpackPlugin = require('clean-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var shell = require('shelljs');
-// 默认把webpack.config放在根目录
 var rootDir = path.dirname(__dirname);
 
 module.exports = {
   entry: {
-      vendor: ['vue'],
-      content: path.join(rootDir, './extension/content/index.js'),
-      background: path.join(rootDir, './extension/background/index.js'),
-      '/list/list': path.join(rootDir, './extension/page/list.js'),
-      '/dialog/dialog': path.join(rootDir, './extension/page/dialog.js')
+      index: path.join(__dirname, './src/index.js')
   },
   output: {
-    path: path.resolve(rootDir, '../dist/extension'),
+    path: path.join(__dirname, './dist'),
     filename: '[name].js'
   },
   module: {
@@ -29,7 +21,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        query: { presets: ['es2017', 'es2016', 'es2015']}
+        query: { presets: ['env']}
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -50,9 +42,8 @@ module.exports = {
     ]
   },
   plugins: [
-      new webpack.optimize.CommonsChunkPlugin({name: 'vendor', chunks: ['/list/list', '/dialog/dialog']}),
-      new cleanWebpackPlugin(['dist/extension'], {
-        root: path.resolve(rootDir, '../'),
+      new cleanWebpackPlugin(['dist'], {
+        root: __dirname,
         verbose: true,
         dry: false
       })
@@ -65,7 +56,7 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: 'cheap-module-source-map'
+  devtool: '#eval-source-map'
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -86,7 +77,4 @@ if (process.env.NODE_ENV === 'production') {
             minimize: true
         })
     ])
-    
-    
-    // console.log(production_manifest);
 }
