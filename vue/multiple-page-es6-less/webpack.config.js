@@ -5,7 +5,8 @@ var rootDir = path.dirname(__dirname);
 
 module.exports = {
   entry: {
-      index: path.join(__dirname, './src/index.js')
+      index: path.join(__dirname, './src/index.js'),
+      tech: path.join(__dirname, './src/tech.js')
   },
   output: {
     path: path.join(__dirname, './dist'),

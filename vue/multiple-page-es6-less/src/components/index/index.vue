@@ -5,26 +5,37 @@
             <img src="../../static/banner.jpg" alt="" class="banner-pic">
         </div>
         <div class="tech">
-            <div class="tech-title">
-                <p class="tech-title-a">T E C H N O L O G Y</p>
-                <p class="tech-title-b">核心技术</p>
+            <div class="global-tech-title">
+                <p class="global-tech-title-a">T E C H N O L O G Y</p>
+                <p class="global-tech-title-b">核 心 技 术</p>
             </div>
             <div class="tech-list global-clearfix">
                 <div class="tech-item" v-for="item in tech">
                     <div class="tech-inner">
-                        <img class="tech-item-img" src="../../static/tech-list1.png" alt="">
+                        <a href="#"><img class="tech-item-img" src="../../static/tech-list1.png" alt=""></a>
                         <p class="tech-title">人脸识别</p>
                         <div class="char-line"></div>
-                        <p class="tech-example one">[行业案例] 铁路闸机人脸验证</p>
-                        <p class="tech-example">[行业案例] 铁路闸机人脸验证</p>
+                        <p class="tech-example one"><a href="#">[行业案例] 铁路闸机人脸验证</a></p>
+                        <p class="tech-example"><a href="#">[行业案例] 铁路闸机人脸验证</a></p>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="client">
+            <div class="global-tech-title">
+                <p class="global-tech-title-a">C L I E N T & P A R T N E R</p>
+                <p class="global-tech-title-b">客 户 和 伙 伴</p>
+            </div>
+            <div class="client-logo">
+                <img src="../../static/client.png" alt="" class="client-logo-img">
+            </div>
+        </div>
+        <footerNav></footerNav>
     </div>
 </template>
 <script>
-    import headerNav from '../header/header.vue'
+    import headerNav from '../header/header.vue';
+    import footerNav from '../footer/footer.vue';
     export default {
         data() {
             return {
@@ -45,7 +56,8 @@
             }
         },
         components: {
-            headerNav
+            headerNav,
+            footerNav
         }
     };
 </script>
