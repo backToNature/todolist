@@ -5,7 +5,8 @@
   "main": "dist/pick-web-article-node.js",
   "scripts": {
     "dev": "rollup index-browser.js --watch --output.format umd --name \"pickWA\" --output.file dist/pick-web-article.js",
-    "build": "rollup index-browser.js --output.format umd --name \"pickWA\" --output.file dist/pick-web-article.js"
+    "build": "rollup index-browser.js --output.format umd --name \"pickWA\" --output.file dist/pick-web-article.js",
+    "test": "http-server ./test"
   },
   "repository": {
     "type": "git",
@@ -18,11 +19,14 @@
   },
   "devDependencies": {
     "http-proxy": "*",
-    "request-promise-native": "*",
-    "request": "*",
+    "http-server": "^0.10.0",
+    "iconv-lite": "^0.4.19",
+    "koa": "*",
     "koa-router": "*",
     "koa-static": "*",
-    "koa": "*",
+    "koa-views": "^6.1.1",
+    "request": "*",
+    "request-promise-native": "*",
     "rollup": "^0.50.0"
   }
 }

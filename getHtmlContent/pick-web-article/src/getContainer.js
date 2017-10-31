@@ -14,7 +14,9 @@ let getContainer = (root) => {
          * @todo
          * 基于视觉制定一些过滤规则
          */
-        _containers.push(item);
+        if (!item.style.display === 'none') {
+            _containers.push(item);
+        }
     });
     return _containers;
 };
