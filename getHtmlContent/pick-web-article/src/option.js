@@ -3,7 +3,7 @@
  */
 
 let _option = {
-    'remove_elements': ['button', 'input', 'select', 'textarea', 'optgroup', 'command', 'datalist', 'frame', 'frameset', 'noframes', 'style', 'link', 'script', 'noscript', 'canvas', 'applet', 'map', 'marquee', 'area', 'base', 'base', '#invalid'],
+    'remove_elements': ['button', 'input', 'select', 'textarea', 'optgroup', 'command', 'datalist', 'frame', 'frameset', 'noframes', 'style', 'link', 'script', 'noscript', 'canvas', 'applet', 'map', 'marquee', 'area', 'base', 'base', 'meta', '#invalid'],
     'container': ['body', 'article', 'section', 'div', 'td', 'li', 'dd', 'dt']
 };
 

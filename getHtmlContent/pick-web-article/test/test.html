@@ -347,7 +347,10 @@
 </div>
 <script src="../dist/pick-web-article.js"></script>
 <script>
-    console.log(pickWA(document.body));
+    let wa = pickWA(document.body);
+    console.log(wa.articleDom); // 正文所在dom容器
+    console.log(wa.allText); // 正文文本
+    console.log(wa.summary); // 正文摘要文本
 </script>
 </body>
 </html>

@@ -18,7 +18,7 @@ let pickWA = (root) => {
     }
 
     return {
-        articleDom: dom,
+        articleDom: dom.node,
         summary: $$getSummary(root),
         allText: allText
     };
