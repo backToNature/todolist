@@ -1,8 +1,70 @@
-.tech .header {
+// .tech .header {
+//     position: fixed;
+// }
+.transition(@time, @property) {
+    -webkit-transition: @property @time;
+    -moz-transition: @property @time;
+    -ms-transition: @property @time;
+    -o-transition: @property @time;
+    transition: @property @time;
+}
+
+.translateY(@diff) {
+    -webkit-transform: translateY(@diff);
+    -moz-transform: translateY(@diff);
+    -ms-transform: translateY(@diff);
+    -o-transform: translateY(@diff);
+    transform: translateY(@diff);
+}
+
+.tech .points {
     position: fixed;
+    right: 50px;
+    top: 50%;
+    z-index: 1;
+    .translateY(-50%);
+    .point {
+        cursor: pointer;
+        &:hover {
+            opacity: 0.8;
+        }
+        &.active {
+            opacity: 1;
+            border: 1px solid #fff;
+        }
+        padding: 6px;
+        margin: 18px 0 0 0;
+        border-radius: 100%;
+        opacity: 0.6;
+    }
+    .point-inner {
+        width: 12px;
+        height: 12px;
+        background: #fff;
+        border-radius: 100%;
+    }
 }
 
 .full-page {
+    .transition(all, 1s);
+    &.step1 {
+        .translateY(0)
+    }
+    &.step2 {
+        .translateY(-100vh)
+    }
+    &.step3 {
+        .translateY(-200vh)
+    }
+    &.step4 {
+        .translateY(-300vh)
+    }
+    &.step5 {
+        .translateY(-400vh)
+    }
+    &.step6 {
+        .translateY(-500vh)
+    }
     .img-wrapper {
         width: 100vw;
         height: 100vh;
