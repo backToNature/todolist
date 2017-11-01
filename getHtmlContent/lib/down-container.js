@@ -539,6 +539,8 @@ $D.getContent__computePointsForCandidate__first = function (_e, _main)
     //  negative
     if (_points_history[0] < 0) { return [0]; }
 
+    
+
     //  candidates, containers, pieces
     //  ==============================
     var _divide__pieces =     Math.max(5,  Math.ceil(_e._count__pieces *     0.25)),
