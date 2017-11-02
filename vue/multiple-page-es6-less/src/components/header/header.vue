@@ -7,7 +7,7 @@
             <a href="./tech.html">核心技术</a>
             <a href="#">典型案例</a>
             <a href="#">关于我们</a>
-            <a href="#">加入紫晴</a>
+            <a href="./join.html">加入紫晴</a>
         </div>
     </div>
 </template>
