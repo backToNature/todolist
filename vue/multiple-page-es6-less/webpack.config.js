@@ -2,12 +2,13 @@ var path = require('path');
 var webpack = require('webpack');
 var cleanWebpackPlugin = require('clean-webpack-plugin');
 var rootDir = path.dirname(__dirname);
-
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: {
       index: path.join(__dirname, './src/index.js'),
       tech: path.join(__dirname, './src/tech.js'),
       join: path.join(__dirname, './src/join.js'),
+      client: path.join(__dirname, './src/client.js')
   },
   output: {
     path: path.join(__dirname, './dist'),
@@ -48,6 +49,11 @@ module.exports = {
         root: __dirname,
         verbose: true,
         dry: false
+      }),
+      new CopyWebpackPlugin([
+          {from: path.join(__dirname, './src/static'), to: path.join(__dirname, './dist/static')}
+      ], {
+          copyUnmodified: true
       })
   ],
   resolve: {
@@ -60,6 +66,8 @@ module.exports = {
   },
   devtool: '#eval-source-map'
 }
+
+
 
 if (process.env.NODE_ENV === 'production') {
     module.exports.devtool = '#source-map';

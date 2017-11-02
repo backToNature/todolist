@@ -1,11 +1,11 @@
 <template>
-    <div class="header global-clearfix">
+    <div class="header">
         <div class="logo-w">
             <a href="./index.html"><div class="logo"></div></a>
         </div>
         <div class="right-menu">
             <a href="./tech.html">核心技术</a>
-            <a href="#">典型案例</a>
+            <a href="./client.html">典型案例</a>
             <a href="#">关于我们</a>
             <a href="./join.html">加入紫晴</a>
         </div>
@@ -20,7 +20,6 @@
         z-index: 1;
     }
     .logo-w {
-        float: left;
         .logo {
             background: url('../../static/logo.png');
             width: 208px;
@@ -28,7 +27,9 @@
         }
     }
     .right-menu {
-        float: right;
+        position: absolute;
+        right: 0;
+        top: 20px;
         margin-top: 26px;
         a {
             color: #fff;
