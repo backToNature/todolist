@@ -126,7 +126,6 @@ let getGoodContainer = (containers) => {
 
     containers_details.forEach(item => {
         item._point.node = item.node;
-        console.log(item._point);
     });
 
     return containers_details;

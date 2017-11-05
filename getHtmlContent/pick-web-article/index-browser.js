@@ -16,8 +16,9 @@ let pickWA = (root) => {
     } else {
         dom = null;
     }
+
     return {
-        articleDom: dom.node,
+        articleDom: dom ? dom.node : null,
         summary: $$getSummary(root),
         allText: allText
     };
