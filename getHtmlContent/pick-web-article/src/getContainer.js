@@ -14,7 +14,8 @@ let getContainer = (root) => {
      * 基于视觉制定一些过滤规则
      */
     containers.forEach(item => {
-        if (item.style.display === 'none') {
+        let style = window.getComputedStyle(item);
+        if (style.display === 'none') {
             _hideContainers.push(item);
         }
 

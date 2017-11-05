@@ -16,7 +16,6 @@ let pickWA = (root) => {
     } else {
         dom = null;
     }
-    console.log(goodContainers);
     return {
         articleDom: dom.node,
         summary: $$getSummary(root),

@@ -45,13 +45,11 @@ let getGoodContainer = (containers) => {
 
         global_img_num += obj.img_num;
 
-
-
         obj.text_length = _node.innerText.length || 0; // 记录文本长度
 
-        obj.sentences = $$getSentenceNum(_node.innerText); // 记录文本句数
+        obj.sentences = $$getSentenceNum(_node.innerText) || 0; // 记录文本句数
 
-        global_sentences += obj.sentences;
+        // global_sentences += obj.sentences;
 
         obj.link_text_length = 0;
 
@@ -61,6 +59,8 @@ let getGoodContainer = (containers) => {
             obj.link_sentence_num += $$getSentenceNum(item.innerText);
             obj.link_text_length += item.innerText.length || 0;
         });
+
+        global_sentences += obj.sentences - obj.link_sentence_num;
 
         obj.tagsNum = getTagsNum(obj);
 
@@ -78,12 +78,15 @@ let getGoodContainer = (containers) => {
         let pure_text_length = curObj.text_length - curObj.link_text_length;
         let pure_text_sentence = curObj.sentences - curObj.link_sentence_num;
 
+        // console.log(pure_text_sentence);
+
+        curObj.pure_text_length = pure_text_length;
+        curObj.pure_text_sentence = pure_text_sentence;
+
 
         if (curObj.link_num * 2 >= pure_text_sentence) {
             return;
         }
-
-        console.log(curObj)
 
         if (pure_text_length < (65 / 3)) {
             return;
