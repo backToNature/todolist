@@ -6,7 +6,7 @@
         <div class="right-menu">
             <a href="./tech.html">核心技术</a>
             <a href="./client.html">典型案例</a>
-            <a href="#">关于我们</a>
+            <a href="./about.html">关于我们</a>
             <a href="./join.html">加入紫晴</a>
         </div>
     </div>

@@ -8,7 +8,8 @@ module.exports = {
       index: path.join(__dirname, './src/index.js'),
       tech: path.join(__dirname, './src/tech.js'),
       join: path.join(__dirname, './src/join.js'),
-      client: path.join(__dirname, './src/client.js')
+      client: path.join(__dirname, './src/client.js'),
+      about: path.join(__dirname, './src/about.js')
   },
   output: {
     path: path.join(__dirname, './dist'),
