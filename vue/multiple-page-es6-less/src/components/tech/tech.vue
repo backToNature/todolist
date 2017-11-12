@@ -1,6 +1,6 @@
 <template>
     <div class="tech">
-        <headerNav></headerNav>
+        <headerNav :index="1"></headerNav>
         <div class="points">
             <div class="point" @click="stepTo(index)" :class="{active: index === page}" v-for="index in 6">
                 <div class="point-inner"></div>
@@ -45,18 +45,31 @@
         mounted() {
             let $full = document.querySelector('.full-page');
             this.page = 1;
+            let lock = false;
+            let fnLock = () => {
+                window.setTimeout(() => {
+                    lock = false;
+                }, 300);
+            };
+            $full.addEventListener("webkitTransitionEnd", fnLock);  // Safari 3.1 到 6.0 代码
+            $full.addEventListener("transitionend", fnLock);
+            let lastTime = new Date();
             let moveDown = () => {
+                lock = true;
                 $full.classList.remove(`step${this.page}`);
                 $full.classList.add(`step${this.page + 1}`);
                 this.page++;
             };
             let moveUp = () => {
+                lock = true;
                 $full.classList.remove(`step${this.page}`);
                 $full.classList.add(`step${this.page - 1}`);
                 this.page--;
             };
             let scrollFunc = (e) => {
-                console.log(e);
+                if (lock) {
+                    return;
+                }
                 if (e.deltaY > 0) {
                     //下滚动
                     moveDown();
@@ -64,17 +77,6 @@
                     //上滚动
                     moveUp();
                 }
-                // e = e || window.event;
-                // let t = 0;
-                // t = (e.wheelDelta) ? e.wheelDelta / 120 : -(e.detail || 0) / 3;//兼容性处理  
-                // if (t > 0 && curIndex > 0) {
-                //     //上滚动
-                //     console.log(4234234)
-                //     moveUp();
-                // } else if (t < 0 && curIndex < sumCount - 1) {
-                //     //下滚动
-                //     moveDown();
-                // }
             };
             document.addEventListener('mousewheel', scrollFunc, false);
         }

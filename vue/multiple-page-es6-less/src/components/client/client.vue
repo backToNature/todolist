@@ -1,6 +1,6 @@
 <template>
     <div class="client">
-        <headerNav></headerNav>
+        <headerNav :index="2"></headerNav>
         <div class="client-w">
             <div class="client-banner">
                 <img src="../../static/client-banner.jpg" alt="" class="client-banner-img">

@@ -1,6 +1,6 @@
 <template>
     <div class="about">
-        <headerNav></headerNav>
+        <headerNav :index="3"></headerNav>
         <div class="about-w">
             <div class="about-banner">
                 <div class="banner-inner">
@@ -19,25 +19,9 @@
                     </div>
                 </div>
                 <div class="person-list global-clearfix">
-                    <div class="person-item">
-                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1510164950275&di=7df04a30117668133e40833eca0fea18&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F8b82b9014a90f603fd31c4293312b31bb151eddf.jpg" class="person-item-img" alt="">
-                        <p class="person-item-info">周继乐</p>
-                    </div>
-                    <div class="person-item">
-                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1510164950275&di=7df04a30117668133e40833eca0fea18&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F8b82b9014a90f603fd31c4293312b31bb151eddf.jpg" class="person-item-img" alt="">
-                        <p class="person-item-info">周继乐</p>
-                    </div>
-                    <div class="person-item">
-                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1510164950275&di=7df04a30117668133e40833eca0fea18&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F8b82b9014a90f603fd31c4293312b31bb151eddf.jpg" class="person-item-img" alt="">
-                        <p class="person-item-info">周继乐</p>
-                    </div>
-                    <div class="person-item">
-                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1510164950275&di=7df04a30117668133e40833eca0fea18&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F8b82b9014a90f603fd31c4293312b31bb151eddf.jpg" class="person-item-img" alt="">
-                        <p class="person-item-info">周继乐</p>
-                    </div>
-                    <div class="person-item">
-                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1510164950275&di=7df04a30117668133e40833eca0fea18&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F8b82b9014a90f603fd31c4293312b31bb151eddf.jpg" class="person-item-img" alt="">
-                        <p class="person-item-info">周继乐</p>
+                    <div v-for="item in personList" class="person-item">
+                        <img :src="item.img" class="person-item-img" alt="">
+                        <p class="person-item-info">{{item.name}}</p>
                     </div>
                 </div>
             </div>
@@ -51,10 +35,10 @@
                 <div class="map">
                     <div class="map-w">
                         <div class="map-inner">
-                            <img src="../../static/map.jpg" alt="" class="map-img">
+                            <a :href="mapObj.link" target="_blank"><img :src="mapObj.mapPic" alt="" class="map-img"></a>
                         </div>
                     </div>
-                    <p class="map-info">北京市海淀区城府路中关村智造大街G座</p>
+                    <p class="map-info">{{mapObj.text}}</p>
                 </div>
             </div>
         </div>
@@ -67,7 +51,35 @@
     import footerNav from '../footer/footer.vue';
     export default {
         data() {
-            return {};
+            return {
+                personList: [
+                    {
+                        img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1510164950275&di=7df04a30117668133e40833eca0fea18&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F8b82b9014a90f603fd31c4293312b31bb151eddf.jpg',
+                        name: '周继乐'
+                    },
+                    {
+                        img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1510164950275&di=7df04a30117668133e40833eca0fea18&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F8b82b9014a90f603fd31c4293312b31bb151eddf.jpg',
+                        name: '周继乐'
+                    },
+                    {
+                        img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1510164950275&di=7df04a30117668133e40833eca0fea18&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F8b82b9014a90f603fd31c4293312b31bb151eddf.jpg',
+                        name: '周继乐'
+                    },
+                    {
+                        img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1510164950275&di=7df04a30117668133e40833eca0fea18&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F8b82b9014a90f603fd31c4293312b31bb151eddf.jpg',
+                        name: '周继乐'
+                    },
+                    {
+                        img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1510164950275&di=7df04a30117668133e40833eca0fea18&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F8b82b9014a90f603fd31c4293312b31bb151eddf.jpg',
+                        name: '周继乐'
+                    }
+                ],
+                mapObj: {
+                    mapPic: './static/map.jpg',
+                    link: 'http://ditu.amap.com/place/B0FFHS0ARY',
+                    text: '北京市海淀区城府路中关村智造大街G座'
+                }
+            };
         },
         components: {
             headerNav,

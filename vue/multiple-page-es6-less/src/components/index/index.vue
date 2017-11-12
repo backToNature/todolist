@@ -12,11 +12,10 @@
             <div class="tech-list global-clearfix">
                 <div class="tech-item" v-for="item in tech">
                     <div class="tech-inner">
-                        <a href="#"><img class="tech-item-img" src="../../static/tech-list1.png" alt=""></a>
-                        <p class="tech-title">人脸识别</p>
+                        <a href="#" target="_blank"><img class="tech-item-img" :src="item.img" alt=""></a>
+                        <p class="tech-title">{{item.title}}</p>
                         <div class="char-line"></div>
-                        <p class="tech-example one"><a href="#">[行业案例] 铁路闸机人脸验证</a></p>
-                        <p class="tech-example"><a href="#">[行业案例] 铁路闸机人脸验证</a></p>
+                        <p v-for="(it, index) in item.infoList" :class="{one: index === 1}" class="tech-example"><a target="_blank" :href="it.link">[{{it.title}}] {{it.info}}</a></p>
                     </div>
                 </div>
             </div>
@@ -41,16 +40,68 @@
             return {
                 tech: [
                     {
-                        img: '../../static/tech-list1.png'
+                        title: '人脸识别',
+                        img: './static/tech-list1.png',
+                        infoList: [
+                            {
+                                title: '行业案例',
+                                info: '铁路闸机人脸验证',
+                                link: '#'
+                            },
+                            {
+                                title: '行业案例',
+                                info: '铁路闸机人脸验证',
+                                link: '#'
+                            }
+                        ]
                     },
                     {
-                        img: '../../static/tech-list2.png'
+                        title: '人脸识别',
+                        img: './static/tech-list2.png',
+                        infoList: [
+                            {
+                                title: '行业案例',
+                                info: '铁路闸机人脸验证',
+                                link: '#'
+                            },
+                            {
+                                title: '行业案例',
+                                info: '铁路闸机人脸验证',
+                                link: '#'
+                            }
+                        ]
                     },
                     {
-                        img: '../../static/tech-list3.png'
+                        title: '人脸识别',
+                        img: './static/tech-list3.png',
+                        infoList: [
+                            {
+                                title: '行业案例',
+                                info: '铁路闸机人脸验证',
+                                link: '#'
+                            },
+                            {
+                                title: '行业案例',
+                                info: '铁路闸机人脸验证',
+                                link: '#'
+                            }
+                        ]
                     },
                     {
-                        img: '../../static/tech-list4.png'
+                        title: '人脸识别',
+                        img: './static/tech-list4.png',
+                        infoList: [
+                            {
+                                title: '行业案例',
+                                info: '铁路闸机人脸验证',
+                                link: '#'
+                            },
+                            {
+                                title: '行业案例',
+                                info: '铁路闸机人脸验证',
+                                link: '#'
+                            }
+                        ]
                     }
                 ]
             }
