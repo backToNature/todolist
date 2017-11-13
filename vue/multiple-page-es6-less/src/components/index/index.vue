@@ -12,7 +12,7 @@
             <div class="tech-list global-clearfix">
                 <div class="tech-item" v-for="item in tech">
                     <div class="tech-inner">
-                        <a href="#" target="_blank"><img class="tech-item-img" :src="item.img" alt=""></a>
+                        <a :href="item.link" target="_blank"><img class="tech-item-img" :src="item.img" alt=""></a>
                         <p class="tech-title">{{item.title}}</p>
                         <div class="char-line"></div>
                         <p v-for="(it, index) in item.infoList" :class="{one: index === 1}" class="tech-example"><a target="_blank" :href="it.link">[{{it.title}}] {{it.info}}</a></p>
@@ -40,6 +40,7 @@
             return {
                 tech: [
                     {
+                        link: '#',
                         title: '人脸识别',
                         img: './static/tech-list1.png',
                         infoList: [
@@ -56,6 +57,7 @@
                         ]
                     },
                     {
+                        link: '#',
                         title: '人脸识别',
                         img: './static/tech-list2.png',
                         infoList: [
@@ -72,6 +74,7 @@
                         ]
                     },
                     {
+                        link: '#',
                         title: '人脸识别',
                         img: './static/tech-list3.png',
                         infoList: [
@@ -88,6 +91,7 @@
                         ]
                     },
                     {
+                        link: '#',
                         title: '人脸识别',
                         img: './static/tech-list4.png',
                         infoList: [

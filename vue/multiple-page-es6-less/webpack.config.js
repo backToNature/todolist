@@ -52,7 +52,12 @@ module.exports = {
         dry: false
       }),
       new CopyWebpackPlugin([
-          {from: path.join(__dirname, './src/static'), to: path.join(__dirname, './dist/static')}
+          {from: path.join(__dirname, './src/static'), to: path.join(__dirname, './dist/static')},
+          {from: path.join(__dirname, './index.html'), to: path.join(__dirname, './dist/index.html')},
+          {from: path.join(__dirname, './about.html'), to: path.join(__dirname, './dist/about.html')},
+          {from: path.join(__dirname, './client.html'), to: path.join(__dirname, './dist/client.html')},
+          {from: path.join(__dirname, './join.html'), to: path.join(__dirname, './dist/join.html')},
+          {from: path.join(__dirname, './tech.html'), to: path.join(__dirname, './dist/tech.html')}
       ], {
           copyUnmodified: true
       })
