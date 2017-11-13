@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "rollup index-browser.js --watch --output.format umd --name \"pickWA\" --output.file dist/pick-web-article.js",
     "build": "rollup index-browser.js --output.format umd --name \"pickWA\" --output.file dist/pick-web-article.js",
-    "test": "http-server ./test"
+    "test": "cd demo && node demo.js"
   },
   "repository": {
     "type": "git",

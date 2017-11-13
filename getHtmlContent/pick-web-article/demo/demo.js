@@ -12,7 +12,6 @@ var Buffer = require('buffer').Buffer;
 
 let domain;
 
-
 let _doRequest = (url) => {
     return new Promise((resolve, reject) => {
         request({encoding: null, url: url}, (err, res, body) => {
@@ -31,6 +30,12 @@ let _doRequest = (url) => {
 router.get('/qb_pick_test', async (ctx, next) => {
     let content = fs.readFileSync(path.join(__dirname, './static/demo.html'), 'utf8');
     ctx.body = content;
+});
+
+router.get('/pick-web-article.js', async (ctx, next) => {
+    let content = fs.readFileSync(path.join(__dirname, '../dist/pick-web-article.js'), 'utf8');
+    ctx.body = content;
+    // await next();
 });
 
 router.get('/qb_pick_test/web', async (ctx, next) => {
