@@ -44,7 +44,7 @@
 	* img@base64 图片转base64
 	* keepElement 元素白名单
 	* blackElement 元素黑名单
-	* keepAttr 保留的属性
+	* keepAttr 保留的属性容忍444·
 
 ### 
 
