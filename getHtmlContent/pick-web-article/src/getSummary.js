@@ -16,11 +16,12 @@ const getSummary = (root) => {
         metaObj.text = $meta[0].getAttribute('content');
         metaObj.sentence = $$getSentenceNum(metaObj.text);
     }
+    
 
     // 其次获取title
     let titleObj = {
-        text: document.title,
-        sentence: $$getSentenceNum(document.title)
+        text: root.title,
+        sentence: $$getSentenceNum(root.title)
     };
 
     let summary = metaObj.sentence >= titleObj.sentence ? metaObj.text : titleObj.text;

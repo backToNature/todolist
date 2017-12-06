@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选词测试</title>
+    <style>
+        .block {
+            margin: 50px 0;
+        }
+        .point {
+            background: red;
+            width: 1px;
+            height: 1px;
+            padding: 5px;
+            border-radius: 100%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <p>啦啦啦是伐啦分类粉色的公司规定风格的风格发斯蒂芬斯蒂芬给的复活点发货的发货的发货</p>
+    </div>
+    <div class="block">
+        <p style="line-height: 3;">据俄罗斯卫星通讯社（Sputnik）报道，这位新任发言人名叫罗西亚纳·马尔科夫斯卡娅（Rossiyana Markovskaya），出生于1991年1月6日，毕业于远东联邦大学（Far Eastern Federal University）新闻系，曾担任过记者、新闻主播和“符拉迪沃斯托克”电视广播公司节目制作人，从2015年开始担任俄罗斯“红星”电视台的记者。罗西亚纳不仅专业实力过硬，而且是一个多才多艺、能歌善舞的姑娘，还曾出演过一些影片</p>
+    </div>
+    <script src="../../dist/getSelectionPosition.js"></script>
+    <script>
+        var drawPoint = function (x, y) {
+            var $point = document.createElement('div');
+            $point.className = 'point';
+            $point.style.cssText = `left: ${x}px;top: ${y}px;`;
+            document.body.appendChild($point);
+        };
+        document.addEventListener('mouseup', function (e) {
+            var Gs = GSP();
+            // drawPoint(Gs.startPoint.left, Gs.startPoint.top);
+            // drawPoint(Gs.endPoint.left, Gs.endPoint.top);
+
+            console.log(GSP());
+
+        });
+    </script>
+</body>
+</html>

@@ -5,6 +5,7 @@
 import $$getContainer from './src/getContainer.js';
 import $$getGoodContainer from './src/getGoodContainer.js';
 import $$getSummary from './src/getSummary.js';
+import $$washHtml from './src/washHtml.js';
 
 let pickWA = (root) => {
     let containers = $$getContainer(root);
@@ -16,6 +17,10 @@ let pickWA = (root) => {
     } else {
         dom = null;
     }
+
+    // let html = dom.innerHtml;
+
+    console.log($$washHtml(dom));
 
     return {
         articleDom: dom ? dom.node : null,

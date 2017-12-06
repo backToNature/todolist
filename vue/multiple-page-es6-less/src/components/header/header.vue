@@ -4,13 +4,20 @@
             <a href="./index.html"><div class="logo"></div></a>
         </div>
         <div class="right-menu">
-            <a href="./tech.html">核心技术</a>
-            <a href="./client.html">典型案例</a>
-            <a href="./about.html">关于我们</a>
-            <a href="./join.html">加入紫晴</a>
+            <a :class="{active: index === 1}" href="./tech.html">核心技术</a>
+            <a :class="{active: index === 2}" href="./client.html">典型案例</a>
+            <a :class="{active: index === 3}" href="./about.html">关于我们</a>
+            <a :class="{active: index === 4}" href="./join.html">加入紫睛</a>
         </div>
     </div>
 </template>
+<script>
+    export default {
+        props: {
+            index: Number
+        }
+    };
+</script>
 <style lang="less" scoped>
     .header {
         position: absolute;
@@ -38,6 +45,9 @@
             border: 1px solid transparent;
             padding: 12px 22px;
             border-radius: 10px;
+            &.active {
+                border: 1px solid #fff;
+            }
             &:hover {
                 border: 1px solid #fff;
             }

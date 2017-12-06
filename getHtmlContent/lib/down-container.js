@@ -2145,9 +2145,7 @@ $D.getHtml = function (node) {
     var _html = $D.getContent__buildHTMLForNode(node, 'the-target');
     _html = _html.substr((_html.indexOf('>')+1));
     _html = _html.substr(0, _html.lastIndexOf('<'));
-    $D.debugRemember('BuildHTML', $D.debugTimerEnd()+'ms');
 
-    $D.debugTimerStart('BuildHTMLPregs');
     //_html = _html.replace(/([,.:?!])(\s*)(p<\/p>)/gi, '$1</p>');
     _html = _html.replace(/<span([^>]*?)>p<\/span>\s*?<\/(div|h1|h2|h3|h4|h5|h6|li|p|span)/gi, '</$2');
     _html = _html.replace(/<(\/)?span([^>]*?)>/gi, '');
@@ -2157,7 +2155,6 @@ $D.getHtml = function (node) {
     _html = _html.replace(/<\/(blockquote|div|h\d|ol|p|table|ul|li)>(\s*<br \/>)+/gi, '</$1>');
     _html = _html.replace(/(<hr \/>\s*<hr \/>\s*)+/gi, '<hr />');
     _html = _html.replace(/(<br \/>\s*<br \/>\s*)+/gi, '<br /><br />');
-    $D.debugRemember('BuildHTMLPregs', $D.debugTimerEnd()+'ms');
     return _html;
 };
 

@@ -12,7 +12,6 @@ var Buffer = require('buffer').Buffer;
 
 let domain;
 
-
 let _doRequest = (url) => {
     return new Promise((resolve, reject) => {
         request({encoding: null, url: url}, (err, res, body) => {
@@ -33,6 +32,12 @@ router.get('/qb_pick_test', async (ctx, next) => {
     ctx.body = content;
 });
 
+router.get('/pick-web-article.js', async (ctx, next) => {
+    let content = fs.readFileSync(path.join(__dirname, '../dist/pick-web-article.js'), 'utf8');
+    ctx.body = content;
+    // await next();
+});
+
 router.get('/qb_pick_test/web', async (ctx, next) => {
     let _url = ctx.query.url;
     let urlObj = new URL(_url);
@@ -41,14 +46,14 @@ router.get('/qb_pick_test/web', async (ctx, next) => {
     let type = obj.headers['content-type'];
     if (type) {
         if (type.toUpperCase().indexOf('GB2312') >= 0) {
-            // console.log('啊啊', iconv.decode('啊啊', 'gb2312'));
-            // console.log(iconv.decode(obj.content, 'gb2312').toString());
-            // obj.content = iconv.decode(obj.content, 'gb2312').toString();
-            // console.log(obj.content);
+            
         } else if (type.toUpperCase().indexOf('GBK') >= 0) {
             // obj.content = iconv.decode(obj.content, 'gbk');
         }
     }
+    delete obj.headers['x-frame-options'];
+    delete obj.headers['content-security-policy'];
+    console.log(obj.headers);
     ctx.set(obj.headers);
     ctx.body = obj.content;
 });

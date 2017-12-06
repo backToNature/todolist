@@ -1,6 +1,6 @@
 <template>
     <div class="client">
-        <headerNav></headerNav>
+        <headerNav :index="2"></headerNav>
         <div class="client-w">
             <div class="client-banner">
                 <img src="../../static/client-banner.jpg" alt="" class="client-banner-img">
@@ -13,9 +13,6 @@
                     <div class="client-item-r">
                         <h1 class="title">{{item.title}}</h1>
                         <p class="info">{{item.info}}</p>
-                        <!-- <div class="img-list">
-                            <img v-for="it in item.iconList" :src="it" alt="" class="img-list-item">
-                        </div> -->
                     </div>
                 </div>
             </div>

@@ -1,18 +1,53 @@
 <template>
     <div class="footer">
         <div class="links global-clearfix">
-            <a href="#">关于我们</a>
-            <a href="#">关于我们</a>
-            <a href="#">关于我们</a>
-            <a href="#">关于我们</a>
-            <a href="#">关于我们</a>
-            <a href="#">关于我们</a>
-            <a href="#">关于我们</a>
-            <a href="#">关于我们</a>
+            <a v-for="item in list" target="_blank" :href="item.link">{{item.text}}</a>
         </div>
         <div class="copyright">©2017 紫睛科技有限公司 版权所有</div>
     </div>
 </template>
+<script>
+    export default {
+        data() {
+            return {
+                list : [
+                    {
+                        text: '关于我们',
+                        link: '#'
+                    },
+                    {
+                        text: '关于我们',
+                        link: '#'
+                    },
+                    {
+                        text: '关于我们',
+                        link: '#'
+                    },
+                    {
+                        text: '关于我们',
+                        link: '#'
+                    },
+                    {
+                        text: '关于我们',
+                        link: '#'
+                    },
+                    {
+                        text: '关于我们',
+                        link: '#'
+                    },
+                    {
+                        text: '关于我们',
+                        link: '#'
+                    },
+                    {
+                        text: '关于我们',
+                        link: '#'
+                    }
+                ]
+            }
+        }
+    };
+</script>
 <style lang="less" scoped>
     .footer {
         background: #313131;
