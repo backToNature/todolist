@@ -5,28 +5,6 @@
     <title>vue测试用例</title>
 </head>
 <body>
-    <div id="app">
-        {{fullName}}
-    </div>
-    <script src="../lib/vue-2.1.8.js"></script>
-    <script>
-        var vm = new Vue({
-            el:"#app",
-            data: {
-                firstName:"foo",
-                lastName:"Bar",
-                fullName:"foo Bar"
-            },
-            watch: {
-                firstName:function(val) {
-                    this.fullName = val + '' + this.lastName
-                },
-                lastName:function(val) {
-                    this.fullName = this.firstName + ' ' + val
-                }
-            }
-        })
-        vm.firstName = 'aa'
-    </script>
+    <h1>啦啦啦啦啦</h1>
 </body>
 </html>
