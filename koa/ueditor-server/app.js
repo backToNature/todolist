@@ -34,8 +34,8 @@ app.use(async (ctx, next) => {
 const storage = multer.diskStorage({  
     //文件保存路径  
     destination(req, file, cb) {
-        cb(null, path.join(__dirname, './static'));
-    },  
+        cb(null, path.join(__dirname, './static/files'));
+    },
     //修改文件名称  
     filename(req, file, cb) {  
       const fileFormat = (file.originalname).split(".");
