@@ -31,7 +31,7 @@ app.use(async (ctx, next) => {
     await next();
 });
 
-const storage = multer.diskStorage({  
+const storage = multer.diskStorage({
     //文件保存路径  
     destination(req, file, cb) {
         cb(null, path.join(__dirname, './static/files'));
@@ -41,7 +41,7 @@ const storage = multer.diskStorage({
       const fileFormat = (file.originalname).split(".");
       cb(null, file.originalname);  
     }  
-  })  
+  })
 
 const upload = multer({
     fileFilter(req, file, cb) {
@@ -85,17 +85,25 @@ router.post('/api/controller', async (ctx, next) => {
     
 }, require('./router/upload.js'));
 
+// router.post('/api/auth', require('./router/auth.js'));
+router.get('/api/auth', require('./router/auth.js'));
+
+router.get('/api/stspost', require('./router/sts-post-object.js'));       
+
+
+
 app.use(staticCache(path.join(__dirname, './static'), {
     maxAge: 365 * 24 * 60 * 60,
     dynamic: true
 }));
+
 
 // 最后把路由全部加载
 app.use(router.routes());
 app.use(router.allowedMethods());
 
 app.host = process.env.IP || 'localhost';
-app.port = process.env.PORT || 8088;
+app.port = process.env.PORT || 80;
 
 
 const server = app.listen(app.port, app.host, () => {
