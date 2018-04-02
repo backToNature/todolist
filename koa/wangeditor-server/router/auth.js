@@ -1,9 +1,11 @@
 const CryptoJS = require('../lib/crypto.js');
-const bucket = 'ght';
-const appid = '1251580007';
-const sid = '';
-const skey = '';
-const region = 'sh';
+
+const $$config = require('../config.js')
+const bucket = $$config.bucket;
+const appid = $$config.appid;
+const sid = $$config.sid;
+const skey = $$config.skey;
+const region = $$config.region;
 
 module.exports = async (ctx, next) => {
     const random = parseInt(Math.random() * Math.pow(2, 32));

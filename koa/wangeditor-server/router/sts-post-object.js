@@ -1,15 +1,16 @@
 var http = require('http');
 var crypto = require('crypto');
 var request = require('request');
+var $$config = require('../config.js');
 
 // 固定分配给CSG的密钥
 var config = {
-    Url: '',
-    Domain: '',
-    SecretId: '',
-    SecretKey: '',
-    Bucket: '', // 这里指定 bucket
-    Region: ''
+    Url: 'https://sts.api.qcloud.com/v2/index.php',
+    Domain: 'sts.api.qcloud.com',
+    SecretId: $$config.sid,
+    SecretKey: $$config.skey,
+    Bucket: `${$$config.bucket}-${$$config.appid}`,
+    Region: $$config.new_region
 };
 
 // 缓存缓存临时密钥

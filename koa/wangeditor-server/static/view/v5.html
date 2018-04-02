@@ -59,15 +59,20 @@
         // 上传文件
         var uploadFile = function (file, callback) {
             var Key = 'dir/' + file.name; // 这里指定上传目录和文件名
-
+            
             getAuthorization({Method: 'POST', Key: Key}, function (err, info) {
                 var auth = info.Authorization;
                 var XCosSecurityToken = info.XCosSecurityToken;
                 var fd = new FormData();
                 fd.append('key', Key);
                 fd.append('Signature', auth);
+                fd.append('insertOnly', 0);
+
                 XCosSecurityToken && fd.append('x-cos-security-token', XCosSecurityToken);
-                fd.append('file', file);
+                // fd.append('file', file);
+                fd.append('op', 'upload');
+                fd.append('filecontent', file);
+
                 var url = prefix;
                 var xhr = new XMLHttpRequest();
                 xhr.open('POST', url, true);

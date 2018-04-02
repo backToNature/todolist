@@ -86,8 +86,12 @@ router.post('/api/controller', async (ctx, next) => {
 }, require('./router/upload.js'));
 
 // router.post('/api/auth', require('./router/auth.js'));
+
+// v4版腾讯云认证
 router.get('/api/auth', require('./router/auth.js'));
 
+
+// v5版腾讯云cos认证
 router.get('/api/stspost', require('./router/sts-post-object.js'));       
 
 
