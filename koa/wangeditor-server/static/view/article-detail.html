@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正文详情</title>
+    <link rel="stylesheet" href="./article-detail.css">
+    <link rel="stylesheet" href="./lib/wangEditor.css">
+</head>
+<body>
+    <div class="content">
+        <h1 id="title">我就是标题</h1>
+        <div id="text" class="w-e-text"></div>
+    </div>
+    <script src="./lib/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            var id = location.search.split('=')[1];
+            $.ajax({
+                type: 'get',
+                url: '/api/getArticleDetail',
+                data: {
+                    id: id
+                },
+                success: function (res) {
+                    if (res.status === 0) {
+                        $('#title').text(res.data.title);
+                        $('#text').html(res.data.content);
+                    } else {
+                        alert('获取详情错误');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

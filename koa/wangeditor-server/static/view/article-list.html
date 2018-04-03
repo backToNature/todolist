@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正文列表</title>
+</head>
+<body>
+    <h1>文章列表</h1>
+    <div id="wrapper">
+
+    </div>
+    <script src="./lib/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+
+            $.ajax({
+                type: 'get',
+                url: '/api/getArticleList',
+                success: function (res) {
+                    if (res.status === 0) {
+                        var html = '';
+                        for (var i = 0; i < res.data.length; i++) {
+                            html += '<p><a target="_blank" href="./article-detail.html?id=' + res.data[i].id + '">' + (res.data[i].title || res.data[i].id) + '</a></p>';
+                        }
+                        $('#wrapper').append(html);
+                    } else {
+                        alert(data.msg);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

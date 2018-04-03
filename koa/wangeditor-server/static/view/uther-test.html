@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测试uther</title>
+</head>
+<body>
+    <script src="https://stdl.qq.com/stdl/uther/1.0/uther.min.js"></script>
+    <script>
+        Parse.initialize('qbweb');
+    Parse.serverURL = 'https://utherapi.sparta.html5.qq.com/qbweb';
+    // Parse.serverURL = 'https://utherapi.browser.qq.com/qbweb';
+    const activity_zwds = Parse.Object.extend("activity_zwds");
+
+
+    // qq skey login
+    function qqSkeyLogin(data, cb) {
+        var myAuthData = {
+        authData: {
+            id: data.uin,   // QQ
+            auth_token: decodeURIComponent(data.skey)   // skey
+        }
+        };
+        var user = new Parse.User();
+        user._linkWith('qqskey', myAuthData).then(function(user) {
+        user && cb && cb();
+        }).catch(function (error)  {
+        console.error("Error: " + error.code + " " + error.message);
+        });
+    }
+    // query 前端调用查询
+    function query(data, cb) {
+        const query = new Parse.Query(activity_zwds);
+        // query.equalTo('title', data.qq);
+        query.find().then(function (results) {
+        //   results.length && cb && cb(JSON.stringify(results));
+            cb(results);
+        }).catch(function (error) {
+        console.error(error);
+        });
+    }
+    query(null, (res) => {
+        console.log(res);
+    });
+
+    // add 调用云函数添加数据
+    //   function addSun(data, cb) {
+    //     Parse.Cloud.run('addsun', {projectId: data.projectId}).then(function (rsp) {
+    //       cb && cb(rsp);
+    //     }).catch(function (error) {
+    //       console.error("Error: " + error);
+    //     });
+    //   }
+    </script>
+</body>
+</html>

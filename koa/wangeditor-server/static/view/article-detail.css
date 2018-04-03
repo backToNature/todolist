@@ -1,0 +1,19 @@
+html,body {
+    /* background: #ccc; */
+}
+
+.content {
+    width: 900px;
+    margin: 0 auto;
+}
+
+#title {
+    text-align: center;
+    height: 50px;
+}
+
+#text {
+    background: #fff;
+    min-height: calc(100vh - 50px);
+    overflow: hidden;
+}

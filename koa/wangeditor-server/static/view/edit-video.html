@@ -2,39 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=-, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>图文正文编辑</title>
+    <title>视频征文上传</title>
     <style>
         body {
             width: 900px;
             margin: 0 auto;
         }
-        .w-e-toolbar {
-            border: 1px solid #ccc;
-            border-bottom: none;
-        }
-        #div2 {
-            height: 600px;
-            border: 1px solid #ccc;
-        }
-
     </style>
 </head>
 <body>
-    <h1>图文正文投稿</h1>
+    <h1>视频征文上传</h1>
     <div>
         <label for="title">标题</label>
         <input id="title" type="text" style="width: 500px;">
         <button id="sub">提交</button>
     </div>
-    <p>正文:</p>
-    <div id="div1"></div>
-    <div id="div2"></div>
+    <br>
+    <div>
+        <input type="file" id="file">
+    </div>
+    <br>
     <script src="./lib/jquery-3.2.1.min.js"></script>
     <script src="./lib/wangEditor.js"></script>
     <script src="./lib/cos-js-sdk-v4.js"></script>
-    <script src="./lib/xss.js"></script>
-    <script src="./edit.js"></script>
+    <script src="./cos-upload.js"></script>
 </body>
 </html>

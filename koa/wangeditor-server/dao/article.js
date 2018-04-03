@@ -3,22 +3,24 @@ const db = require('./bin.js');
 module.exports = {
     /**
      * 新增文章
-     * @constructor
-     * @param {Number} type - 文章类型
+     * @param {Number} type - 文章类型 1: 图文 2: 视频 3: 音频
      * @param {string} content - 文章内容
      */
     async inserArticle(type = 1, content = '', resource_url = '', title = '') {
         return await db.query(`INSERT INTO article(type, content, resource_url, title) VALUES(?,?,?,?) `, [type, content, resource_url, title]);
     },
-    // 更新提取结果不正常的列
-    async updateErrorPickStatus(id, title, summary) {
-        let result = await db.query(tableName, `UPDATE url SET title=?,summary=?,is_pick_right=0,is_task_done=1,u_time=?,status=CASE WHEN status=1 THEN 2 ELSE status END WHERE id=${id}`, [title, summary, new Date()]);
-        return result;
+    /**
+     * 获取文章列表
+     */
+    async getArticleList() {
+        return await db.query(`SELECT * FROM article`);
     },
-    // 插入一条新增的提取测试
-    async addNewPickUrl(url) {
-        let result = await db.query(tableName, `INSERT INTO url(domain, u_time) VALUES(?,?) `, [url, new Date()]);
-        return result;
+    /**
+     * 根据id获取单条article
+     * @param {Number} id - 文章id
+     */
+    async getSingleArticle(id) {
+        return await db.query(`SELECT * FROM article WHERE id=?` , [id]);
     },
     // 插入多条提取测试
     async addUrlList(urls) {

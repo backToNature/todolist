@@ -1,6 +1,5 @@
 const $$daoArticle = require('../dao/article.js');
 
-
 const typeSet = new Set([1, 2, 3]); // 1: 图文 2: 视频 3: 音频
 
 const url_reg = /(https?|ftp|file)\:\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/;

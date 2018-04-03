@@ -3,7 +3,7 @@
 $(function () {
     // 初始化编辑器
     var E = window.wangEditor;
-    var editor = new E('#div3');
+    var editor = new E('#div1', '#div2');
     editor.customConfig.uploadImgServer = '/upload';
     editor.customConfig.debug = true;
     // 图片上传逻辑
@@ -51,7 +51,6 @@ $(function () {
 
     editor.customConfig.customUploadImg = function (files, insert) {
         var file = files[0];
-
         var fileName = new Date().valueOf() + file.size + '.' + file.type.split('/')[1]
         cos.uploadFile(function (res) {
             if (res.code === 0) {
@@ -63,4 +62,31 @@ $(function () {
     }
     
     editor.create();
+
+    $('#sub').on('click', function (e) {
+        var text = editor.txt.text();
+        var html = editor.txt.html();
+        if (!text.trim().length) {
+            alert('不能为空');
+            return false;
+        }
+        
+        var title = $('#title').val();
+        html = filterXSS(html);
+        $.ajax({
+            url: '/api/addArticle',
+            type: 'post',
+            data: {
+                type: 1,
+                content: html,
+                title: title
+            },
+            success: function (res) {
+                if (res.status === 0) {
+                    alert('新增文章成功');
+                }
+            }
+        });
+        
+    })
 });

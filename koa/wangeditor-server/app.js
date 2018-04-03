@@ -21,7 +21,10 @@ router.get('/api/stspost', require('./router/sts-post-object.js'));
 
 // 新增文章
 router.post('/api/addArticle', require('./router/addArticle.js'));
-
+// 获取文章列表
+router.get('/api/getArticleList', require('./router/getArticleList.js'));
+// 获取文章详情
+router.get('/api/getArticleDetail', require('./router/getArticleDetail.js'));
 
 app.use(staticCache(path.join(__dirname, './static'), {
     maxAge: 365 * 24 * 60 * 60,
