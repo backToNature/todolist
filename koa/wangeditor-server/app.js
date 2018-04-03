@@ -9,12 +9,18 @@ const shell = require('shelljs');
 const router = new Router();
 const staticCache = require('koa-static-cache');
 
+const bodyParser = require('koa-bodyparser');
+app.use(bodyParser());
+
 
 // v4版腾讯云认证
 router.get('/api/auth', require('./router/auth.js'));
 // v5版腾讯云cos认证
 router.get('/api/stspost', require('./router/sts-post-object.js'));       
 
+
+// 新增文章
+router.post('/api/addArticle', require('./router/addArticle.js'));
 
 
 app.use(staticCache(path.join(__dirname, './static'), {
@@ -28,7 +34,7 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 
 app.host = process.env.IP || 'localhost';
-app.port = process.env.PORT || 80;
+app.port = process.env.PORT || 8080;
 
 const server = app.listen(app.port, app.host, () => {
   console.log('Koa server listening on %s:%d', server.address().address, server.address().port)

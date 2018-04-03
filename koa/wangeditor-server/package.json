@@ -9,13 +9,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "koa": "^2.5.0"
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0"
   },
   "dependencies": {
     "json-comments": "^0.2.1",
     "koa-multer": "^1.0.2",
     "koa-router": "^7.4.0",
     "koa-static-cache": "^5.1.2",
+    "mysql": "^2.15.0",
     "request": "^2.85.0",
     "shelljs": "^0.8.1"
   }
