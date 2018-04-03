@@ -61,6 +61,7 @@ $(function () {
         }, errorCallBack, progressCallBack, bucket, myFolder + fileName, file, 0, taskReady);
     }
     
+    editor.customConfig.uploadImgShowBase64 = true
     editor.create();
 
     $('#sub').on('click', function (e) {

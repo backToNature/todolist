@@ -18,13 +18,43 @@
     var taskReady = function (taskId) {
         lastTaskId = taskId;
     };
+    var fileName = 'fsdff';
+
+    var getFileExtName = function (fileName) {
+        if (fileName.lastIndexOf('.') >= 0) {
+            return fileName.substring(fileName.lastIndexOf('.'), fileName.length);
+        }
+        return '';
+    };
+    console.log(getFileExtName(fileName));
     
-    window.cosUpload = function (cfg) {
-        cfg.allowType = ['']; // 允许的文件类型
+    window.cosUpload = function (cfg, file) {
+        cfg.allowType = '.jpg'; // 允许的文件类型
         // cfg.allowSize = ''; // 允许的文件大小
+
+        if (cfg.allowType && cfg.allowType.indexOf(getFileExtName(file.name)) < 0) {
+            console.log('上传文件类型错误');
+            debugger;
+            return;
+        }
+
+        var fnSuccess = function (res) {
+            if (cfg.fnSuccess) {
+                cfg.fnSuccess(res);
+            }
+        };
+
+        var fnError = function (res) {
+            
+        };
+
+        var fnProgress = function (curr, sha1) {
+
+        };
+
+
+
         
-        
-        
-        cos.uploadFile(successCallBack, errorCallBack, progressCallBack, bucket, myFolder + file.name, file, 0, taskReady);
+        cos.uploadFile(fnSuccess, fnError, fnProgress, bucket, myFolder + file.name, file, 0, taskReady);
     };
 }());
