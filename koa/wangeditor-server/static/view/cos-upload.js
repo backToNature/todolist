@@ -29,12 +29,11 @@
     console.log(getFileExtName(fileName));
     
     window.cosUpload = function (cfg, file) {
-        cfg.allowType = '.jpg'; // 允许的文件类型
+        // cfg.allowType = '.jpg'; // 允许的文件类型
         // cfg.allowSize = ''; // 允许的文件大小
-
+        
         if (cfg.allowType && cfg.allowType.indexOf(getFileExtName(file.name)) < 0) {
             console.log('上传文件类型错误');
-            debugger;
             return;
         }
 
