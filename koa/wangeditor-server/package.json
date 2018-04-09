@@ -27,11 +27,12 @@
     "url-loader": "^1.0.1",
     "vue-loader": "^14.2.2",
     "vue-template-compiler": "^2.5.16",
-    "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.3"
+    "webpack": "3.8.1",
+    "webpack-dev-server": "2.9.3"
   },
   "dependencies": {
     "element-ui": "^2.3.3",
+    "jquery": "^3.3.1",
     "json-comments": "^0.2.1",
     "koa-multer": "^1.0.2",
     "koa-router": "^7.4.0",
@@ -41,6 +42,7 @@
     "shelljs": "^0.8.1",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "wangeditor": "^3.1.0"
   }
 }

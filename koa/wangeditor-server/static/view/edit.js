@@ -41,7 +41,6 @@ $(function () {
         var sha1CheckProgress = ((sha1 * 100).toFixed(2) || 100) + '%';
         var uploadProgress = ((curr || 0) * 100).toFixed(2) + '%';
         var msg = 'upload progress:' + uploadProgress + '; sha1 check:' + sha1CheckProgress + '.';
-        console.log(msg);
     };
 
     var lastTaskId;

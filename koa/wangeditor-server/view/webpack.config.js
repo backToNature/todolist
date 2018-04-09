@@ -6,6 +6,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: {
       index: path.join(__dirname, './src/index.js'),
+      profile: path.join(__dirname, './src/profile.js'),
       edit: path.join(__dirname, './src/edit.js')
   },
   output: {
@@ -49,7 +50,7 @@ module.exports = {
         dry: false
       }),
       new CopyWebpackPlugin([
-          {from: path.join(__dirname, './src/static'), to: path.join(__dirname, './dist/static')}
+        //   {from: path.join(__dirname, './src/static'), to: path.join(__dirname, './dist/static')}
       ], {
           copyUnmodified: true
       })
@@ -61,6 +62,14 @@ module.exports = {
   },
   performance: {
     hints: false
+  },
+  devServer: {
+    host: 'daringuo.qq.com',
+    disableHostCheck: true,
+    port: 8088,
+    proxy: {
+        "/api/auth": "http://daringuo.qq.com:8080"
+    }
   },
   devtool: '#eval-source-map'
 }
