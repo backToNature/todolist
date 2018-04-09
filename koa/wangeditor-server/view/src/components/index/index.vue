@@ -1,8 +1,13 @@
 <template>
     <div class="index">
+        <el-switch
+            v-model="value2"
+            active-color="#13ce66"
+            inactive-color="#ff4949">
+        </el-switch>
         <headerNav></headerNav>
         <div class="banner">
-            <img src="../../static/banner.jpg" alt="" class="banner-pic">
+            <!-- <img src="../../static/banner.jpg" alt="" class="banner-pic"> -->
         </div>
         <div class="tech">
             <div class="global-tech-title">
@@ -26,7 +31,7 @@
                 <p class="global-tech-title-b">客 户 和 伙 伴</p>
             </div>
             <div class="client-logo">
-                <img src="../../static/client.png" alt="" class="client-logo-img">
+                <!-- <img src="../../static/client.png" alt="" class="client-logo-img"> -->
             </div>
         </div>
         <footerNav></footerNav>
@@ -38,6 +43,7 @@
     export default {
         data() {
             return {
+                value2: false,
                 tech: [
                     {
                         link: '#',
