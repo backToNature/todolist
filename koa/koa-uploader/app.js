@@ -7,7 +7,7 @@ const Router = require('koa-router');
 const multer = require('koa-multer');
 const shell = require('shelljs');
 const router = new Router();
-const md5 = require('./md5.js');
+const md5 = require('./lib/md5.js');
 const $$config = require('./config.js');
 
 // 跨域头指定
@@ -50,7 +50,7 @@ const storage = multer.diskStorage({
     } else {
         cb(null, file.originalname);  
     }
-  }  
+  }
 })  
 
 const upload = multer({

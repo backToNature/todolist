@@ -1,0 +1,23 @@
+{
+  "name": "koa-file-uploader",
+  "version": "1.0.0",
+  "description": "simple file uploader by koa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "koa",
+    "middleware",
+    "upload",
+    "file"
+  ],
+  "author": "'guohao' <'backtonature@foxmail.com'>",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.5.0",
+    "koa-multer": "^1.0.2",
+    "koa-router": "^7.4.0",
+    "shelljs": "^0.8.1"
+  }
+}
