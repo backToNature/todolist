@@ -125,7 +125,7 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 
 app.host = process.env.IP || 'localhost';
-app.port = process.env.PORT || 8000;
+app.port = process.env.PORT || 8080;
 
 
 const server = app.listen(app.port, app.host, () => {

@@ -11,10 +11,6 @@
 app.use(koa-file-uploader(config));
 
 
-### 使用koa-router
-
-router.post('/api/upload', koa-file-uploader(config));
-
 ## config
 
 ### cors
@@ -35,7 +31,7 @@ router.post('/api/upload', koa-file-uploader(config));
 
 ### allowedSize
 
-允许的文件大小，默认为20kb
+允许的文件大小，默认为20mb
 
 ### saveAsMd5
 

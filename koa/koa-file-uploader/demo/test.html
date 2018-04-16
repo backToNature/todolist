@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>文件上传</title>
+</head>
+<body>
+  <form action="http://127.0.0.1:8000/api/upload" enctype="multipart/form-data" method="POST">
+    <input type="file" name="img" id="img">
+    <input type="submit" value="提交">
+  </form>
+  <script>
+    var $img = document.querySelector('#img');
+    $img.addEventListener('change', (e) => {
+      var file = e.target.files[0];
+      var formData = new FormData();
+      formData.append('img', file);
+      var request = new XMLHttpRequest();
+      request.open("POST", "http://127.0.0.1:8000/api/upload");
+      request.send(formData);
+    });
+  </script>
+</body>
+</html>
