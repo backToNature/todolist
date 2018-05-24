@@ -1,0 +1,10 @@
+{
+    "comments": false,
+    "presets": ["env"],
+    "plugins": [
+        "syntax-dynamic-import",
+        "transform-async-to-generator",
+        "transform-regenerator",
+        "transform-runtime"
+    ]
+}
