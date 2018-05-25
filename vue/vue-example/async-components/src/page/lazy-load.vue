@@ -1,7 +1,7 @@
 <template>
   <div class="lazy-load">
     <div class="first-screen">
-      first-screen
+      <el-button type="primary" @click="$login.login()">登录</el-button>
     </div>
     <div class="two" ref="two">
       <lazy-two v-if="two"></lazy-two>
