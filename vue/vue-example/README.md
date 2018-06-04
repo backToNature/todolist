@@ -8,3 +8,5 @@
 ## 加了keep-alive的beforeMount会执行几次？
 
 ## 升华全局组件（无须申明）？
+
+## this.$componet.login

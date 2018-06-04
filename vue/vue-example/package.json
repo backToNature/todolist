@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev-async": "cd async-components && cross-env NODE_ENV=development webpack-dev-server --open --hot"
+    "dev-async": "cd async-components && cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cd async-components && cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "author": "",
   "license": "ISC",

@@ -11,10 +11,11 @@
   export default {
     data() {
       return {
-        tableShow: false
+        tableShow: true
       }
     },
     components: {
+      // 项目中引用
       'big-table': () => import('../async-components/big-table.vue')
     }
   }
