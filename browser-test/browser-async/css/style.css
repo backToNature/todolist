@@ -1,0 +1,12 @@
+body{
+
+    color:#f00;
+    font-size: 48px;
+    background: #ccc;
+
+}
+
+div {
+    height: 2000px;
+    width: 100%;
+}
