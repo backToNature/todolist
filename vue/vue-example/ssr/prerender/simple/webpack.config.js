@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: './',
     filename: 'build.js'
   },
   module: {
@@ -82,6 +82,7 @@ if (process.env.NODE_ENV === 'production') {
       // Index.html is in the root directory.
       staticDir: path.join(__dirname),
       routes: [ '/' ],
+      outputDir: path.join(__dirname, 'dist'),
       // Optional minification.
       minify: {
         collapseBooleanAttributes: true,
@@ -92,7 +93,13 @@ if (process.env.NODE_ENV === 'production') {
       },
 
       renderer: new Renderer({
-        renderAfterDocumentEvent: 'render-event'
+        injectProperty: '__PRERENDER_INJECTED',
+        // Optional - Any values you'd like your app to have access to via `window.injectProperty`.
+        inject: {
+          foo: 'bar'
+        },
+        // renderAfterDocumentEvent: 'render-event',
+        renderAfterTime: 2000
       })
     })
   ])
