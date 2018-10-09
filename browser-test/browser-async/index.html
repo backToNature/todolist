@@ -1,14 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        var start = new Date().valueOf();
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log(start);
+            console.log(new Date().valueOf());
+        });
+    </script>
     <meta charset="UTF-8">
     <title>BrowsersyncExample</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+    <script>
+        
+    </script>
    <h1>browsersync.cn</h1>
    <h2>browser-sync start --server --files "**/*.css, **/*.html"</h2>
    <h3>browser-sync start --proxy "主机名" "css/*.css"</h3>
    <div></div>
+   <script>
+       var name = 'guy'; //=> window.name = 'guy';
+       function A() {
+           var name = 'yep';
+           this.name = 'World';
+           console.log(name);
+       }
+       function say() {
+           window.test = this;
+           console.log(this);
+           if (typeof name === 'undefined') {
+               var name = 'xng';
+               console.log('Goodbye,' + this.name);
+           } else {
+               console.log('Hello,' + name);
+           }
+       }
+       
+       A.prototype.say = say;
+       var a = new A();
+       a.say();
+       say();
+   </script>
+   <script>
+       var w1Date;
+       var w2Date;
+       function w1() {
+           w1Date = Date.now();
+       }
+       function w2() {
+           w2Date = Date.now();
+           console.log(1,(w2Date - w1Date));
+       }
+       setTimeout(w1, 100);
+       setTimeout(w2, 200);
+       
+       function timeLopp(k) {
+           var now = Date.now();
+           while(Date.now() - now < k) {}
+       }
+       timeLopp(100);
+   </script>
 </body>
-</html>
+</html> 
