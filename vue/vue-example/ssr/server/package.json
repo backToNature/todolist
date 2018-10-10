@@ -10,7 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "koa": "^2.5.1",
+    "url-loader": "^1.1.2",
     "vue": "^2.5.16",
-    "vue-server-renderer": "^2.5.16"
+    "vue-loader": "^15.4.2",
+    "vue-server-renderer": "^2.5.16",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "devDependencies": {
+    "webpack": "^4.20.2"
   }
 }
