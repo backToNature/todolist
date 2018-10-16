@@ -7,7 +7,7 @@
     "dev": "node server",
     "start": "cross-env NODE_ENV=production node server",
     "build": "rimraf dist && npm run build:client && npm run build:server",
-    "build:client": "cross-env NODE_ENV=production webpack --config build/webpack.client.config.js --progress --hide-modules",
+    "build:client": "cross-env NODE_ENV=production webpack --config webpack.client.config.js --progress --hide-modules",
     "build:server": "cross-env NODE_ENV=production webpack --config webpack.server.config.js --progress --hide-modules"
   },
   "author": "",
@@ -22,13 +22,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
-    "babel-core": "^6.26.3",
+    "@babel/preset-env": "^7.1.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "babel-preset-env": "^1.7.0",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
-    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^2.0.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "rimraf": "^2.6.2",

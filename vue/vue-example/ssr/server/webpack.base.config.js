@@ -1,7 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -11,7 +8,7 @@ module.exports = {
     ? false
     : '#cheap-module-source-map',
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     filename: '[name].[chunkhash].js'
   },
@@ -45,35 +42,14 @@ module.exports = {
           limit: 10000,
           name: '[name].[ext]?[hash]'
         }
-      },
-      {
-        test: /\.styl(us)?$/,
-        use: isProd
-          ? ExtractTextPlugin.extract({
-              use: [
-                {
-                  loader: 'css-loader',
-                  options: { minimize: true }
-                },
-                'stylus-loader'
-              ],
-              fallback: 'vue-style-loader'
-            })
-          : ['vue-style-loader', 'css-loader', 'stylus-loader']
-      },
+      }
     ]
   },
   performance: {
     maxEntrypointSize: 300000,
     hints: isProd ? 'warning' : false
   },
-  plugins: isProd
-    ? [
-        new VueLoaderPlugin(),
-        new webpack.optimize.ModuleConcatenationPlugin()
-      ]
-    : [
-        new VueLoaderPlugin(),
-        new FriendlyErrorsPlugin()
-      ]
+  plugins: [
+    new VueLoaderPlugin()
+  ]
 }
