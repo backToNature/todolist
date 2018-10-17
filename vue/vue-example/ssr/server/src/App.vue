@@ -1,10 +1,10 @@
 <template>
-    <div id="#app">
-        <h1>我就是模板{{user}}</h1>
-        <h3>title: {{title}}</h3>
+    <div id="app">
+        <router-view></router-view>
     </div>
 </template>
 <script>
+
 export default {
     data() {
         return {
@@ -12,10 +12,16 @@ export default {
         }
     },
     beforeCreate() {
-        console.log(111111111111);
+        console.log(1);
+    },
+    created() {
+        console.log(2);
+    },
+    beforeMount() {
+        console.log(3);
     },
     mounted() {
-        console.log(2222222222);
+        console.log(4);
     }
 }
 </script>

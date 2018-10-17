@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "node server",
+    "dev": "cross-env NODE_ENV=development node dev",
     "start": "cross-env NODE_ENV=production node server",
     "build": "rimraf dist && npm run build:client && npm run build:server",
     "build:client": "cross-env NODE_ENV=production webpack --config webpack.client.config.js --progress --hide-modules",
@@ -13,7 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.4",
     "koa": "^2.5.1",
+    "route-cache": "^0.4.4",
+    "serve-favicon": "^2.5.0",
     "url-loader": "^1.1.2",
     "vue": "^2.5.16",
     "vue-loader": "^15.4.2",

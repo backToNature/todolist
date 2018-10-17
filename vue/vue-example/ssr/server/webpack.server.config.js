@@ -29,7 +29,7 @@ module.exports = merge(baseConfig, {
     // 你还应该将修改 `global`（例如 polyfill）的依赖模块列入白名单
     whitelist: /\.css$/
   }),
-
+  mode: process.env.NODE_ENV,
   // 这是将服务器的整个输出
   // 构建为单个 JSON 文件的插件。
   // 默认文件名为 `vue-ssr-server-bundle.json`
