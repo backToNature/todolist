@@ -8,21 +8,21 @@
 export default {
     data() {
         return {
-            user: 'guohao'
+            user: 'guohao1'
         }
     },
-    beforeCreate() {
-        console.log(1);
-    },
-    created() {
-        console.log(2);
-    },
-    beforeMount() {
-        console.log(3);
-    },
-    mounted() {
-        console.log(4);
-    }
+    // beforeCreate() {
+    //     console.log(1);
+    // },
+    // created() {
+    //     console.log(2);
+    // },
+    // beforeMount() {
+    //     console.log(3);
+    // },
+    // mounted() {
+    //     console.log(4);
+    // }
 }
 </script>
 

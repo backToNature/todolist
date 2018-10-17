@@ -1,10 +1,10 @@
-const webpack = require('webpack')
+const path = require('path')
 const merge = require('webpack-merge')
 const baseConfig = require('./webpack.base.config.js')
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
 
 module.exports = merge(baseConfig, {
-  entry: './src/entry-client.js',
+  entry: path.join(__dirname, './src/entry-client.js'),
   optimization: {
     splitChunks: {
       // 重要信息：这将 webpack 运行时分离到一个引导 chunk 中，
