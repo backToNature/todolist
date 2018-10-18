@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>xadasds</title>
+    <script src="./ejs.js"></script>
+    <script type="text/html" id="index">
+        <h1>title: <%= data.title %></h1>
+        <h3>author: <%= data.author %></h3>
+        <p>detail: <%= data.detail %></p>
+    </script>
+</head>
+<body>
+    <script>
+        fetch('http://119.28.29.14:8080/index?debug=true', { method: 'GET',mode: 'cors'}).then(res => {
+            return res.json();
+        }).then(data => {
+            const template = document.querySelector('#index').innerHTML;
+            const html = ejs.render(template, data);
+            document.body.innerHTML = html;
+        });
+    </script>
+</body>
+</html>
