@@ -39,76 +39,21 @@
         data() {
             return {
                 tech: [
-                    {
-                        link: '#',
-                        title: '人脸识别',
-                        img: './static/tech-list1.png',
-                        infoList: [
-                            {
-                                title: '行业案例',
-                                info: '铁路闸机人脸验证',
-                                link: '#'
-                            },
-                            {
-                                title: '行业案例',
-                                info: '铁路闸机人脸验证',
-                                link: '#'
-                            }
-                        ]
-                    },
-                    {
-                        link: '#',
-                        title: '人脸识别',
-                        img: './static/tech-list2.png',
-                        infoList: [
-                            {
-                                title: '行业案例',
-                                info: '铁路闸机人脸验证',
-                                link: '#'
-                            },
-                            {
-                                title: '行业案例',
-                                info: '铁路闸机人脸验证',
-                                link: '#'
-                            }
-                        ]
-                    },
-                    {
-                        link: '#',
-                        title: '人脸识别',
-                        img: './static/tech-list3.png',
-                        infoList: [
-                            {
-                                title: '行业案例',
-                                info: '铁路闸机人脸验证',
-                                link: '#'
-                            },
-                            {
-                                title: '行业案例',
-                                info: '铁路闸机人脸验证',
-                                link: '#'
-                            }
-                        ]
-                    },
-                    {
-                        link: '#',
-                        title: '人脸识别',
-                        img: './static/tech-list4.png',
-                        infoList: [
-                            {
-                                title: '行业案例',
-                                info: '铁路闸机人脸验证',
-                                link: '#'
-                            },
-                            {
-                                title: '行业案例',
-                                info: '铁路闸机人脸验证',
-                                link: '#'
-                            }
-                        ]
-                    }
                 ]
             }
+        },
+        beforeCreate() {
+            fetch('http://119.28.29.14:8081/index.json', {
+               method: 'GET',mode: 'cors'
+            }).then(res => {
+                return res.json();
+            }).then(data => {
+                this.tech = data.tech;
+                this.$nextTick(() => {
+                    const time = new Date() - window._start;
+                    console.log(time);
+                });
+            });
         },
         components: {
             headerNav,

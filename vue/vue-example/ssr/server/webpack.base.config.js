@@ -1,5 +1,7 @@
 const path = require('path')
+const webpack = require('webpack')
 const { VueLoaderPlugin } = require('vue-loader')
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -37,6 +39,18 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.less$/,
+        use: ExtractTextPlugin.extract({
+          use: [
+            {
+              loader: 'css-loader'
+            },
+            'less-loader'
+          ],
+          fallback: 'vue-style-loader'
+        })
+      },
+      {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           use: [
@@ -63,6 +77,7 @@ module.exports = {
     new VueLoaderPlugin(),
     new ExtractTextPlugin({
       filename: 'common.[chunkhash].css'
-    })
+    }),
+    new FriendlyErrorsPlugin()
   ]
 }

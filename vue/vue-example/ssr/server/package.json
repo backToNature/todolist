@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node dev",
+    "dev": "cross-env NODE_ENV=development node server",
     "start": "cross-env NODE_ENV=production node server",
     "build": "rimraf dist && npm run build:client && npm run build:server",
     "build:client": "cross-env NODE_ENV=production webpack --config webpack.client.config.js --progress --hide-modules",
@@ -35,6 +35,8 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^2.0.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
     "rimraf": "^2.6.2",
     "sw-precache-webpack-plugin": "^0.11.5",
     "url-loader": "^1.1.2",

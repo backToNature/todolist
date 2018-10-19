@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      window._start = new Date();
+    </script>
     <title>{{ title }}</title>
     <meta charset="utf-8">
     <meta name="mobile-web-app-capable" content="yes">
@@ -17,5 +20,8 @@
   </head>
   <body>
   <!--vue-ssr-outlet-->
+  <script>
+    console.log(new Date() - window._start)
+  </script>
   </body>
 </html>

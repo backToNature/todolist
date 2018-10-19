@@ -1,34 +1,105 @@
-const fs = require('fs');
-const path = require('path');
-const createBundleRenderer = require('vue-server-renderer').createBundleRenderer;
+const path = require('path')
+const fs = require('fs')
+const LRU = require('lru-cache')
+const express = require('express')
+const compression = require('compression')
+const microcache = require('route-cache')
+const resolve = file => path.resolve(__dirname, file)
+const { createBundleRenderer } = require('vue-server-renderer')
 
-const template = fs.readFileSync(path.join(__dirname, './index.template.html'), 'utf8');
+const isProd = process.env.NODE_ENV === 'production'
+const useMicroCache = process.env.MICRO_CACHE !== 'false'
+const serverInfo =
+  `express/${require('express/package.json').version} ` +
+  `vue-server-renderer/${require('vue-server-renderer/package.json').version}`
 
-// bundle对象
-let renderer = createBundleRenderer(require('./dist/vue-ssr-server-bundle.json'), {
-  runInNewContext: false,
-  template,
-  clientManifest: require('./dist/vue-ssr-client-manifest.json'),
-  // template,
-  shouldPreload: (file, type) => {
-    // 基于文件扩展名的类型推断。
-    // https://fetch.spec.whatwg.org/#concept-request-destination
-    if (type === 'script' || type === 'style') {
-      return true
+const app = express()
+
+function createRenderer (bundle, options) {
+  return createBundleRenderer(bundle, Object.assign(options, {
+    // for component caching
+    cache: LRU({
+      max: 1000,
+      maxAge: 1000 * 60 * 15
+    }),
+    basedir: resolve('./dist'),
+    runInNewContext: false
+  }))
+}
+let renderer
+let readyPromise
+const templatePath = resolve('./index.template.html')
+
+if (isProd) {
+  const template = fs.readFileSync(templatePath, 'utf-8')
+  const bundle = require('./dist/vue-ssr-server-bundle.json')
+  // The client manifests are optional, but it allows the renderer
+  // to automatically infer preload/prefetch links and directly add <script>
+  // tags for any async chunks used during render, avoiding waterfall requests.
+  const clientManifest = require('./dist/vue-ssr-client-manifest.json')
+  renderer = createRenderer(bundle, {
+    template,
+    clientManifest
+  })
+} else {
+  readyPromise = require('./dev-server.js')(
+    app,
+    templatePath,
+    (bundle, options) => {
+      renderer = createRenderer(bundle, options)
     }
-    if (type === 'font') {
-      // 只预加载 woff2 字体
-      return /\.woff2$/.test(file)
-    }
-    if (type === 'image') {
-      // 只预加载重要 images
-      return file === 'hero.jpg'
+  )
+}
+
+const serve = (path, cache) => express.static(resolve(path), {
+  maxAge: cache && isProd ? 1000 * 60 * 60 * 24 * 30 : 0
+})
+
+app.use(compression({ threshold: 0 }))
+app.use('/dist', serve('./dist', true))
+
+app.use(microcache.cacheSeconds(1, req => useMicroCache && req.originalUrl))
+
+
+
+function render (req, res) {
+  const s = Date.now()
+
+  res.setHeader("Content-Type", "text/html")
+  res.setHeader("Server", serverInfo)
+
+  const handleError = err => {
+    if (err.url) {
+      res.redirect(err.url)
+    } else if(err.code === 404) {
+      res.status(404).send('404 | Page Not Found')
+    } else {
+      // Render Error Page or Redirect
+      res.status(500).send('500 | Internal Server Error')
+      console.error(`error during render : ${req.url}`)
+      console.error(err.stack)
     }
   }
-});
 
-renderer.renderToString({title: '豪哥'}).then(res => {
-  console.log(res);
-});
+  const context = {
+    title: 'Vue HN 2.0', // default title
+    url: req.url
+  }
+  renderer.renderToString(context, (err, html) => {
+    console.log(err);
+    if (err) {
+      return handleError(err)
+    }
+    res.send(html)
+  })
+}
 
-// console.log(renderer.renderToString());
+app.get('*', isProd ? render : (req, res) => {
+  readyPromise.then(() => render(req, res))
+})
+
+
+const port = process.env.PORT || 8000
+app.listen(port, () => {
+  console.log(`server started at localhost:${port}`)
+})

@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const path = require('path')
 const merge = require('webpack-merge')
 const baseConfig = require('./webpack.base.config.js')
@@ -20,6 +21,10 @@ module.exports = merge(baseConfig, {
   },
   mode: process.env.NODE_ENV,
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+      'process.env.VUE_ENV': '"client"'
+    }),
     // 此插件在输出目录中
     // 生成 `vue-ssr-client-manifest.json`。
     new VueSSRClientPlugin()
