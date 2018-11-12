@@ -1,0 +1,243 @@
+Xshell 6 (Build 0095)
+Copyright (c) 2002 NetSarang Computer, Inc. All rights reserved.
+
+Type `help' to learn how to use Xshell prompt.
+[D:\~]$ 
+
+Connecting to 119.28.29.14:22...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+
+Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-130-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+Last login: Wed Oct 31 15:11:18 2018 from 203.205.141.123
+ubuntu@VM-0-3-ubuntu:~$ 
+ubuntu@VM-0-3-ubuntu:~$ 
+ubuntu@VM-0-3-ubuntu:~$ 
+ubuntu@VM-0-3-ubuntu:~$ ls
+api  demo  dist  index.template.html  node-v10.12.0-linux-x64.tar.xz  server.js  ssl  vue-ssr
+ubuntu@VM-0-3-ubuntu:~$ cd /etc/
+ubuntu@VM-0-3-ubuntu:/etc$ ls
+acpi                           cron.monthly    hdparm.conf      ld.so.conf.d    modprobe.d        popularity-contest.conf  rsyslog.d    timezone
+adduser.conf                   crontab         host.conf        legal           modules           ppp                      screenrc     tmpfiles.d
+alternatives                   cron.weekly     hostname         libaudit.conf   modules-load.d    profile                  securetty    ucf.conf
+apm                            crypttab        hosts            libnl-3         mtab              profile.d                security     udev
+apparmor                       dbus-1          hosts.allow      locale.alias    nanorc            protocols                selinux      ufw
+apparmor.d                     debconf.conf    hosts.deny       locale.gen      network           python                   services     updatedb.conf
+apport                         debian_version  img_version      localtime       NetworkManager    python2.7                sgml         update-manager
+apt                            default         init             logcheck        networks          python3                  shadow       update-motd.d
+at.deny                        deluser.conf    init.d           login.defs      newt              python3.5                shadow-      update-notifier
+bash.bashrc                    depmod.d        initramfs-tools  logrotate.conf  nginx             qcloudzone               shells       uuid
+bash_completion                dhcp            inputrc          logrotate.d     nsswitch.conf     rc0.d                    skel         vim
+bash_completion.d              dpkg            insserv          lsb-release     ntp.conf          rc1.d                    sos.conf     vmware-tools
+bindresvport.blacklist         environment     insserv.conf     ltrace.conf     ntp.conf.dist     rc2.d                    ssh          vtrgb
+binfmt.d                       fonts           insserv.conf.d   lvm             opt               rc3.d                    ssl          wgetrc
+byobu                          fstab           iproute2         machine-id      os-release        rc4.d                    subgid       X11
+ca-certificates                fuse.conf       iscsi            machine-info    overlayroot.conf  rc5.d                    subgid-      xdg
+ca-certificates.conf           gai.conf        issue            magic           pam.conf          rc6.d                    subuid       xml
+ca-certificates.conf.dpkg-old  groff           issue.net        magic.mime      pam.d             rc.local                 subuid-      yum
+calendar                       group           kbd              mailcap         passwd            rcS.d                    sudoers      zsh_command_not_found
+cloud                          group-          kernel           mailcap.order   passwd-           resolvconf               sudoers.d
+console-setup                  grub.d          kernel-img.conf  manpath.config  perl              resolv.conf              sysctl.conf
+cron.d                         gshadow         ldap             mdadm           pki               rmt                      sysctl.d
+cron.daily                     gshadow-        ld.so.cache      mime.types      pm                rpc                      systemd
+cron.hourly                    gss             ld.so.conf       mke2fs.conf     polkit-1          rsyslog.conf             terminfo
+ubuntu@VM-0-3-ubuntu:/etc$ cd nginx/
+ubuntu@VM-0-3-ubuntu:/etc/nginx$ ls
+conf.d        fastcgi_params  koi-win     nginx.conf    scgi_params      sites-enabled  uwsgi_params
+fastcgi.conf  koi-utf         mime.types  proxy_params  sites-available  snippets       win-utf
+ubuntu@VM-0-3-ubuntu:/etc/nginx$ cd conf.d/
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ ls
+ssl.conf
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ vim ssl.conf 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ rm -rf ssl.conf 
+rm: cannot remove 'ssl.conf': Permission denied
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo rm -rf ssl.conf 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ ls
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo touch http-proxy.conf
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo touch https-proxy.conf
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ ls
+http-proxy.conf  https-proxy.conf
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo rm -rf https-proxy.conf 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo vim http-proxy.conf
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo ng
+ngettext  nginx     
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo nginx -t
+nginx: [emerg] unknown directive "erver" in /etc/nginx/conf.d/http-proxy.conf:1
+nginx: configuration file /etc/nginx/nginx.conf test failed
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo vim http-proxy.conf 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo service nginx re
+reload   restart  
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo service nginx reload
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo service nginx restart
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ vim http-proxy.conf 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ vim http-proxy.conf 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo vim http-proxy.conf 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo nginx -t
+nginx: [emerg] unknown log format "main" in /etc/nginx/conf.d/http-proxy.conf:4
+nginx: configuration file /etc/nginx/nginx.conf test failed
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo vim http-proxy.conf 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo service nginx restart
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo service nginx reload
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo service nginx restart
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ vim http-proxy.conf 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo vim http-proxy.conf 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo nginx -s reload
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo nginx -s restart
+nginx: invalid option: "-s restart"
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo vim http-proxy.conf 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ sudo service nginx restart
+
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ vim http-proxy.conf 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/conf.d$ cd ..
+ubuntu@VM-0-3-ubuntu:/etc/nginx$ ls
+conf.d        fastcgi_params  koi-win     nginx.conf    scgi_params      sites-enabled  uwsgi_params
+fastcgi.conf  koi-utf         mime.types  proxy_params  sites-available  snippets       win-utf
+ubuntu@VM-0-3-ubuntu:/etc/nginx$ vim nginx.conf 
+ubuntu@VM-0-3-ubuntu:/etc/nginx$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx$ cd sites-enabled/
+ubuntu@VM-0-3-ubuntu:/etc/nginx/sites-enabled$ ls
+default
+ubuntu@VM-0-3-ubuntu:/etc/nginx/sites-enabled$ cd d
+-bash: cd: d: No such file or directory
+ubuntu@VM-0-3-ubuntu:/etc/nginx/sites-enabled$ vim default 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/sites-enabled$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/sites-enabled$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/sites-enabled$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/sites-enabled$ 
+ubuntu@VM-0-3-ubuntu:/etc/nginx/sites-enabled$ cd ..
+ubuntu@VM-0-3-ubuntu:/etc/nginx$ vim nginx.conf 
+ubuntu@VM-0-3-ubuntu:/etc/nginx$ sudo vim nginx.conf
+
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+
+events {
+        worker_connections 768;
+        # multi_accept on;
+}
+
+http {
+
+        ##
+        # Basic Settings
+        ##
+
+        sendfile on;
+        tcp_nopush on;
+        tcp_nodelay on;
+        keepalive_timeout 65;
+        types_hash_max_size 2048;
+        # server_tokens off;
+
+        # server_names_hash_bucket_size 64;
+        # server_name_in_redirect off;
+
+        include /etc/nginx/mime.types;
+        default_type application/octet-stream;
+
+        ##
+        # SSL Settings
+        ##
+
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2; # Dropping SSLv3, ref: POODLE
+        ssl_prefer_server_ciphers on;
+
+        ##
+        worker_connections 768;
+        # multi_accept on;
+}
+
+http {
+
+        ##
+        # Basic Settings
+        ##
+
+        sendfile on;
+        tcp_nopush on;
+        tcp_nodelay on;
+        keepalive_timeout 65;
+        types_hash_max_size 2048;
+        # server_tokens off;
+
+        # server_names_hash_bucket_size 64;
+        # server_name_in_redirect off;
+
+        include /etc/nginx/mime.types;
+        default_type application/octet-stream;
+
+        ##
+        # SSL Settings
+        ##
+
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2; # Dropping SSLv3, ref: POODLE
+        ssl_prefer_server_ciphers on;
+
+        ##
+        # Logging Settings
+        ##
+
+        access_log /var/log/nginx/access.log;
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+
+events {
+        worker_connections 768;
+        # multi_accept on;
+}
+
+http {
+
+        ##
+        # Basic Settings
+        ##
+
+        sendfile on;
+        tcp_nopush on;
+        tcp_nodelay on;
+        keepalive_timeout 65;
+        types_hash_max_size 2048;
+        # server_tokens off;
+
+        # server_names_hash_bucket_size 64;
+        # server_name_in_redirect off;
+
+        include /etc/nginx/mime.types;
+        default_type application/octet-stream;
+
+        ##
+        # SSL Settings
+        ##
+
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2; # Dropping SSLv3, ref: POODLE
+        ssl_prefer_server_ciphers on;
+Type  :quit<Enter>  to exit Vim                                                                                                                 14,3-10       Top
